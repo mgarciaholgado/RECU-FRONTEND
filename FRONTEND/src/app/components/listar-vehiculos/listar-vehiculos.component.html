@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">LISTADO DE VEHICULOS</span>
+                    <table class="table mt-3" >
+                        <thead class="table-dark">
+                          <tr>
+                            <th scope="col">Matricula</th>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Tipo de coche</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let vehiculos of listarVehiculos">
+                            <th scope="row">{{vehiculos._matricula}}</th>
+                            <td>{{vehiculos._marca}}</td>
+                            <td>{{vehiculos._color}}</td>
+                            <td>{{vehiculos._tipoVehiculo}}</td>
+                            <td>
+                                <i [routerLink]="['/editar-vehiculo' , vehiculos._matricula]" class="fas fa-pen-to-square"></i>
+                                <i (click)="eliminarVehiculo(vehiculos._matricula)" class="fas fa-trash-can text-danger"></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
