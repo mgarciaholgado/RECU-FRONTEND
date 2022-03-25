@@ -7,7 +7,7 @@ import { tVehiculo } from '../models/vehiculo';
   providedIn: 'root'
 })
 export class VehiculoService {
-  url = 'https://mechanic-api-rest.herokuapp.com';
+  url = 'https://recu-backend.herokuapp.com';
   constructor(private http: HttpClient) { }
 
   getVehiculos(): Observable<any>{
