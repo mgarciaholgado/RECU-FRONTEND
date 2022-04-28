@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Reparaciones, tReparaciones } from 'src/app/models/reparacion';
 import { ReparacionService } from 'src/app/services/reparacion.service';
+import { VehiculoService } from 'src/app/services/vehiculos.service';
 
 @Component({
   selector: 'app-crear-reparacion',
@@ -10,6 +11,7 @@ import { ReparacionService } from 'src/app/services/reparacion.service';
   styleUrls: ['./crear-reparacion.component.css'],
 })
 export class CrearReparacionComponent implements OnInit {
+  matriculas!: any[];
   reparacionForm: FormGroup;
   titulo = 'Crear Reparacion';
   codigo: string | null;
@@ -17,8 +19,13 @@ export class CrearReparacionComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private _reparacionesService: ReparacionService,
+    private vehiculoService:VehiculoService,
     private aRouter: ActivatedRoute
-  ) {
+  ) 
+  {
+    this.vehiculoService.getVehiculos().subscribe((matriculas)=>{
+      this.matriculas = matriculas;
+    })
     this.reparacionForm = this.fb.group({
       codigo: ['', Validators.required],
       matricula: ['', Validators.required],

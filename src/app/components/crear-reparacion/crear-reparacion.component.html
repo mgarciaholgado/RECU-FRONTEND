@@ -10,8 +10,11 @@
                              class="form-control" placeholder="Codigo Reparacion">
                         </div>
                         <div class="mb-3">
-                            <input type="text" formControlName="matricula"
-                             class="form-control" placeholder="Matricula del coche">
+                            
+                            <select formControlName="matricula" class="form-select">
+                                <option selected>Elige una matricula</option>
+                                <option *ngFor="let matricula of matriculas" [ngValue]="matricula._matricula">{{matricula._matricula}}</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <input type="text" formControlName="nombre"
