@@ -18,16 +18,15 @@ import { LoginComponent } from './components/login/login.component';
 import { SharedModule } from './components/shared/shared.module';
 import { ListarVehiculosComponent } from './components/listar-vehiculos/listar-vehiculos.component';
 import { CrearVehiculosComponent } from './components/crear-vehiculos/crear-vehiculos.component';
+import { CrearClienteComponent } from './components/crear-cliente/crear-cliente.component';
+import { ListarClientesComponent } from './components/listar-clientes/listar-clientes.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CrearReparacionComponent,
-    ListarReparacionComponent,
     LoginComponent,
     ListarVehiculosComponent,
-    CrearVehiculosComponent,
     
   ],
   imports: [
