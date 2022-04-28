@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 
 
+
 // COMPONENTES
 import { AppComponent } from './app.component';
 import { CrearReparacionComponent } from './components/crear-reparacion/crear-reparacion.component';
@@ -18,6 +19,7 @@ import { SharedModule } from './components/shared/shared.module';
 import { ListarVehiculosComponent } from './components/listar-vehiculos/listar-vehiculos.component';
 import { CrearVehiculosComponent } from './components/crear-vehiculos/crear-vehiculos.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,7 @@ import { CrearVehiculosComponent } from './components/crear-vehiculos/crear-vehi
     LoginComponent,
     ListarVehiculosComponent,
     CrearVehiculosComponent,
+    
   ],
   imports: [
     BrowserModule,

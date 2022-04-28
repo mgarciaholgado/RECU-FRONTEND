@@ -9,12 +9,11 @@
                             <input type="number" formControlName="codigo"
                              class="form-control" placeholder="Codigo Reparacion">
                         </div>
-                        <div class="mb-3">
-                            
-                            <select formControlName="matricula" class="form-select">
-                                <option selected>Elige una matricula</option>
+                        <div class="form-floating mb-3">
+                            <select formControlName="matricula" class="form-select" id="floatingSelect1">
                                 <option *ngFor="let matricula of matriculas" [ngValue]="matricula._matricula">{{matricula._matricula}}</option>
                             </select>
+                            <label for="floatingSelect1">Escoge un Vehiculo</label>
                         </div>
                         <div class="mb-3">
                             <input type="text" formControlName="nombre"

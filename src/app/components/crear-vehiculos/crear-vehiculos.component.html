@@ -17,9 +17,13 @@
                             <input type="text" formControlName="color"
                              class="form-control" placeholder="Color del vehiculo">
                         </div>
-                        <div class="mb-3">
-                            <input type="text" formControlName="tVehiculo"
-                             class="form-control" placeholder="Deportivo o Todo Terreno">
+                        <div class="form-floating">
+                            
+                            <select formControlName="tVehiculo" class="form-select" id="floatingSelect">
+                                <option>Deportivo</option>
+                                <option>Todoterreno</option>
+                            </select>
+                            <label for="floatingSelect">Tipo de Vehiculo</label>
                         </div>
                         <div class="mt-3">
                             <button routerLink="/dashboard" class="btn btn-secondary btn-lg float-start">VOLVER</button>

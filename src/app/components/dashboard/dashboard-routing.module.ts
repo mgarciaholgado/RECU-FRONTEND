@@ -9,7 +9,7 @@ import { CrearVehiculosComponent } from '../crear-vehiculos/crear-vehiculos.comp
 const routes: Routes = [
   { path: '', component: DashboardComponent, children:[
     { path: '', component: ListarVehiculosComponent},
-    //{ path: '/editar-vehiculo', component: CrearVehiculosComponent },
+    
     { path: '/ver-graficos', component: InicioComponent},
 
   ]},
