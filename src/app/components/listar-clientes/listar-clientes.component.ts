@@ -9,21 +9,21 @@ import { ClienteService } from 'src/app/services/cliente.service';
 })
 export class ListarClientesComponent implements OnInit {
   listarClientes: Clientes[] = [];
-  constructor(private clienteService: ClienteService) { }
+  constructor(private _clienteService: ClienteService) { }
 
   ngOnInit(): void {
-    this.obtenerCliente();
+    this.obtenerClientes();
   }
 
-  obtenerCliente(){
-    this.clienteService.getClientes().subscribe(data => {
+  obtenerClientes(){
+    this._clienteService.getClientes().subscribe(data => {
       this.listarClientes = data;
     })
   }
 
   eliminarCliente(dni:any){
-    this.clienteService.eliminarCliente(dni).subscribe(data =>{
-    this.obtenerCliente();
+    this._clienteService.eliminarCliente(dni).subscribe(data =>{
+    this.obtenerClientes();
     })
   }
 

@@ -23,17 +23,8 @@
 
                 <td>{{ reparaciones._CosteBase * 1.21 | currency: "EUR" }}</td>
                 <td>
-                  <i
-                    [routerLink]="[
-                      '/editar-reparacion',
-                      reparaciones._codReparacion
-                    ]"
-                    class="fas fa-pen-to-square"
-                  ></i>
-                  <i
-                    (click)="eliminarReparaciones(reparaciones._codReparacion)"
-                    class="fas fa-trash-can text-danger"
-                  ></i>
+                  <i [routerLink]="['/editar-reparacion',reparaciones._codReparacion]" class="fas fa-pen-to-square"></i>
+                  <i (click)="eliminarReparaciones(reparaciones._codReparacion)" class="fas fa-trash-can text-danger"></i>
                 </td>
               </tr>
             </tbody>

@@ -14,7 +14,6 @@ import { APP_BASE_HREF } from '@angular/common';
 import { AppComponent } from './app.component';
 import { CrearReparacionComponent } from './components/crear-reparacion/crear-reparacion.component';
 import { ListarReparacionComponent } from './components/listar-reparacion/listar-reparacion.component';
-import { LoginComponent } from './components/login/login.component';
 import { SharedModule } from './components/shared/shared.module';
 import { ListarVehiculosComponent } from './components/listar-vehiculos/listar-vehiculos.component';
 import { CrearVehiculosComponent } from './components/crear-vehiculos/crear-vehiculos.component';
@@ -25,7 +24,6 @@ import { ListarClientesComponent } from './components/listar-clientes/listar-cli
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     ListarVehiculosComponent,
     
   ],

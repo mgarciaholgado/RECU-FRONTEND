@@ -6,19 +6,18 @@ import { CrearVehiculosComponent } from './components/crear-vehiculos/crear-vehi
 import { ListarClientesComponent } from './components/listar-clientes/listar-clientes.component';
 import { ListarReparacionComponent } from './components/listar-reparacion/listar-reparacion.component';
 import { ListarVehiculosComponent } from './components/listar-vehiculos/listar-vehiculos.component';
-import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'crear-vehiculo', component: CrearVehiculosComponent },
   { path: 'ver-reparaciones', component: ListarReparacionComponent },
   { path: 'ver-clientes', component: ListarClientesComponent },
   { path: 'crear-cliente', component: CrearClienteComponent },
   { path: 'crear-reparacion', component: CrearReparacionComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'dashboard', loadChildren:()=> import('./components/dashboard/dashboard.module').then(x=>x.DashboardModule)},
   { path: 'editar-reparacion/:codigo', component: CrearReparacionComponent },
   { path: 'editar-vehiculo/:matricula', component: CrearVehiculosComponent },
+  { path: 'editar-cliente/:dni', component:  CrearClienteComponent },
   { path: '**', redirectTo: 'login', pathMatch:'full'}
 ];
 
