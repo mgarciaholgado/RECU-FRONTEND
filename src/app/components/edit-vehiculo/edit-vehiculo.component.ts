@@ -2,32 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { tVehiculo } from 'src/app/models/vehiculo';
-import { ClienteService } from 'src/app/services/cliente.service';
 import { VehiculoService } from 'src/app/services/vehiculos.service';
 
-
 @Component({
-  selector: 'app-crear-vehiculos',
-  templateUrl: './crear-vehiculos.component.html',
-  styleUrls: ['./crear-vehiculos.component.css'],
+  selector: 'app-edit-vehiculo',
+  templateUrl: './edit-vehiculo.component.html',
+  styleUrls: ['./edit-vehiculo.component.css'],
 })
-export class CrearVehiculosComponent implements OnInit {
-  propietarios!: any[];
-  vehiculoForm: FormGroup;
-  titulo = 'Crear Vehiculo';
+export class EditVehiculoComponent implements OnInit {
+  editvehiculoForm: FormGroup;
+  titulo = 'Editar Vehiculo';
   matricula: string | null;
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private _vehiculosService: VehiculoService,
-    private clienteService: ClienteService,
     private aRouter: ActivatedRoute
   ) {
-    this.clienteService.getClientes().subscribe((dni)=>{
-      this.propietarios = dni;
-    })
-
-    this.vehiculoForm = this.fb.group({
+    this.editvehiculoForm = this.fb.group({
       DNIpropietario: ['', Validators.required],
       matricula: ['', Validators.required],
       marca: ['', Validators.required],
@@ -40,14 +33,13 @@ export class CrearVehiculosComponent implements OnInit {
   ngOnInit(): void {
     this.editVehiculo();
   }
-
   crearVehiculo() {
     const VEHICULO: tVehiculo = {
-      DNIpropietario:this.vehiculoForm.get('propietario')?.value,
-      matricula: this.vehiculoForm.get('matricula')?.value,
-      marca: this.vehiculoForm.get('marca')?.value,
-      color: this.vehiculoForm.get('color')?.value,
-      tipoVehiculo: this.vehiculoForm.get('tVehiculo')?.value,
+      DNIpropietario:this.editvehiculoForm.get('propietario')?.value,
+      matricula: this.editvehiculoForm.get('matricula')?.value,
+      marca: this.editvehiculoForm.get('marca')?.value,
+      color: this.editvehiculoForm.get('color')?.value,
+      tipoVehiculo: this.editvehiculoForm.get('tVehiculo')?.value,
     };
     if (this.matricula !== null) {
       this._vehiculosService
@@ -64,11 +56,10 @@ export class CrearVehiculosComponent implements OnInit {
 
   editVehiculo() {
     if (this.matricula !== null) {
-      this.titulo = 'Editar Vehiculo';
       this._vehiculosService
         .obtenerVehiculo(this.matricula)
         .subscribe((data) => {
-          this.vehiculoForm.setValue({
+          this.editvehiculoForm.setValue({
             DNIpropietario: data._DNIpropietario,
             matricula: data._matricula,
             marca: data._marca,

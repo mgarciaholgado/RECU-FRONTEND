@@ -19,6 +19,8 @@ import { ListarVehiculosComponent } from './components/listar-vehiculos/listar-v
 import { CrearVehiculosComponent } from './components/crear-vehiculos/crear-vehiculos.component';
 import { CrearClienteComponent } from './components/crear-cliente/crear-cliente.component';
 import { ListarClientesComponent } from './components/listar-clientes/listar-clientes.component';
+import { EditVehiculoComponent } from './components/edit-vehiculo/edit-vehiculo.component';
+import { EditReparacionComponent } from './components/edit-reparacion/edit-reparacion.component';
 
 
 @NgModule({

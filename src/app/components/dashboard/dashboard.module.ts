@@ -11,6 +11,8 @@ import { CrearReparacionComponent } from '../crear-reparacion/crear-reparacion.c
 import { ListarReparacionComponent } from '../listar-reparacion/listar-reparacion.component';
 import { CrearClienteComponent } from '../crear-cliente/crear-cliente.component';
 import { ListarClientesComponent } from '../listar-clientes/listar-clientes.component';
+import { EditVehiculoComponent } from '../edit-vehiculo/edit-vehiculo.component';
+import { EditReparacionComponent } from '../edit-reparacion/edit-reparacion.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { ListarClientesComponent } from '../listar-clientes/listar-clientes.comp
     ListarReparacionComponent,
     CrearClienteComponent,
     ListarClientesComponent,
+    EditVehiculoComponent,
+    EditReparacionComponent
   ],
   imports: [CommonModule, DashboardRoutingModule, SharedModule],
 })

@@ -5,12 +5,10 @@
             <div class="card">
                 <div class="card-body text-center">
                     <span class="titulo">{{ titulo | uppercase}}</span>
-                    <form class="mt-3" [formGroup]="vehiculoForm" (ngSubmit)="crearVehiculo()">
-                        <div class="form-floating mb-3">
-                            <select formControlName="DNIpropietario" class="form-select" id="floatingSelect1">
-                                <option *ngFor="let dni of propietarios" [ngValue]="dni._dni">{{dni._dni}} - {{dni._nombre}}</option>
-                            </select>
-                            <label for="floatingSelect1">Propietario del vehiculo</label>
+                    <form class="mt-3" [formGroup]="editvehiculoForm" (ngSubmit)="crearVehiculo()">
+                        <div class="mb-3">
+                            <input type="text"  formControlName="DNIpropietario"
+                             class="form-control" placeholder="" readonly="readonly" />
                         </div>
                         <div class="mb-3">
                             <input type="text" formControlName="matricula"
@@ -24,14 +22,11 @@
                             <input type="text" formControlName="color"
                              class="form-control" placeholder="Color del vehiculo">
                         </div>
-                        <div class="form-floating">
-                            
-                            <select formControlName="tVehiculo" class="form-select" id="floatingSelect">
-                                <option>Deportivo</option>
-                                <option>Todoterreno</option>
-                            </select>
-                            <label for="floatingSelect">Tipo de Vehiculo</label>
+                        <div class="mb-3">
+                            <input type="text" formControlName="tVehiculo"
+                             class="form-control" placeholder="Color del vehiculo">
                         </div>
+                        
                         <div class="mt-3">
                             <button routerLink="/dashboard" class="btn btn-secondary btn-lg float-start">VOLVER</button>
                             <button type="submit" class="btn btn-success btn-lg float-end">ENVIAR</button>
@@ -43,3 +38,4 @@
         </div>
     </div>
 </div>
+

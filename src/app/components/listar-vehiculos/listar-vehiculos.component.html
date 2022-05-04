@@ -7,6 +7,7 @@
                     <table class="table mt-3" >
                         <thead class="table-dark">
                           <tr>
+                            <th scope="col">Propietario</th>
                             <th scope="col">Matricula</th>
                             <th scope="col">Marca</th>
                             <th scope="col">Color</th>
@@ -16,10 +17,11 @@
                         </thead>
                         <tbody>
                           <tr *ngFor="let vehiculos of listarVehiculos">
+                            <th scope="row">{{vehiculos._DNIpropietario}}</th>
                             <th scope="row">{{vehiculos._matricula}}</th>
-                            <td>{{vehiculos._marca}}</td>
-                            <td>{{vehiculos._color}}</td>
-                            <td>{{vehiculos._tipoVehiculo}}</td>
+                            <td scope="row">{{vehiculos._marca}}</td>
+                            <td scope="row">{{vehiculos._color}}</td>
+                            <td scope="row">{{vehiculos._tipoVehiculo}}</td>
                             <td>
                                 <i [routerLink]="['/editar-vehiculo' , vehiculos._matricula]" class="fas fa-pen-to-square"></i>
                                 <i (click)="eliminarVehiculo(vehiculos._matricula)" class="fas fa-trash-can text-danger"></i>

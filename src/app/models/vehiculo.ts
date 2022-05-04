@@ -1,20 +1,25 @@
 export class Vehiculos {
+  public _DNIpropietario: string;
   public _matricula: string;
   public _marca: string;
   public _color: string;
   public _tipoVehiculo: string;
 
   constructor(
+    DNIpropietario: string,
     matricula: string,
     marca: string,
     color: string,
     tipoVehiculo: string
   ) {
+    this._DNIpropietario = DNIpropietario;
     this._matricula = matricula;
     this._marca = marca;
     this._color = color;
     this._tipoVehiculo = tipoVehiculo;
   }
+
+
 
   get matricula() {
     return this._matricula;
@@ -33,6 +38,7 @@ export class Vehiculos {
   }
 }
 export type tVehiculo = {
+  DNIpropietario:string;
   matricula: string;
   marca: string;
   color: string;
