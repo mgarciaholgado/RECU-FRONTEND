@@ -2,3 +2,8 @@
     cursor: pointer;
     margin-left: 7px;
 }
+
+.trans{
+    display: flex;
+    justify-content: center;
+  }

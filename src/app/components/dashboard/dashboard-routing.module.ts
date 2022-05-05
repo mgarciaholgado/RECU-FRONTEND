@@ -10,11 +10,9 @@ import { ListarClientesComponent } from '../listar-clientes/listar-clientes.comp
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, children:[
-    { path: '', component: ListarVehiculosComponent},
+    { path: '', component: InicioComponent},
     { path: '/ver-reparaciones', component: ListarReparacionComponent},
     { path: '/ver-clientes', component: ListarClientesComponent},
-
-
   ]},
 ];
 

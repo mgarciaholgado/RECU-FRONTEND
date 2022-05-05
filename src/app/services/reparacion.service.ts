@@ -21,7 +21,6 @@ export class ReparacionService {
   }
 
   crearReparaciones(reparacion: tReparaciones): Observable<any>{
-    console.log(reparacion)
     return this.http.post(this.url + '/addReparacion', reparacion);
   }
 

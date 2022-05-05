@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">{{ titulo | uppercase}}</span>
+                    <form class="mt-3" [formGroup]="empleadoForm" (ngSubmit)="crearEmpleado()">
+                        <div class="form-floating mb-3">
+                            <select formControlName="tipoEmpleado" class="form-select" id="floatingSelect1">
+                                <option value="mecanico">Mecanico</option>
+                                <option value="pintor">Pintor</option>
+                            </select>
+                            <label for="floatingSelect1">Tipo de Empleado</label>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="dni"
+                             class="form-control" placeholder="DNI">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="nombre"
+                             class="form-control" placeholder="Nombre Reparacion">
+                        </div>
+                        <div class="mb-3">
+                            <label class="fecha">Hola</label>
+                            <input type="date" formControlName="fechaContratacion"
+                             class="form-control" placeholder="Fecha Contratacion">
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" *ngIf="empleadoForm.value.tipoEmpleado == 'mecanico'" formControlName="sueldoMes"
+                             class="form-control" placeholder="Sueldo mes" >
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="number" *ngIf="empleadoForm.value.tipoEmpleado == 'pintor'" formControlName="precioHora"
+                             class="form-control" placeholder="Precio Hora" >
+                        </div>
+                        <div class="mt-3">
+                            <button routerLink="/ver-reparaciones" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+                            <button type="submit" class="btn btn-success btn-lg float-end">ENVIAR</button>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

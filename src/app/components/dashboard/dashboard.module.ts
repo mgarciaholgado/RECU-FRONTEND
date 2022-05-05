@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { DashboardComponent } from './dashboard.component';
@@ -13,6 +14,8 @@ import { CrearClienteComponent } from '../crear-cliente/crear-cliente.component'
 import { ListarClientesComponent } from '../listar-clientes/listar-clientes.component';
 import { EditVehiculoComponent } from '../edit-vehiculo/edit-vehiculo.component';
 import { EditReparacionComponent } from '../edit-reparacion/edit-reparacion.component';
+import { ListarVehiculosComponent } from '../listar-vehiculos/listar-vehiculos.component';
+import { CrearEmpleadosComponent } from '../crear-empleados/crear-empleados.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { EditReparacionComponent } from '../edit-reparacion/edit-reparacion.comp
     CrearClienteComponent,
     ListarClientesComponent,
     EditVehiculoComponent,
-    EditReparacionComponent
+    EditReparacionComponent,
+    ListarVehiculosComponent,
+    CrearEmpleadosComponent
   ],
   imports: [CommonModule, DashboardRoutingModule, SharedModule],
 })

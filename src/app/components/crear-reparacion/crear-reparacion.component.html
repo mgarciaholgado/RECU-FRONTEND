@@ -12,7 +12,7 @@
                         </div>
                         <div class="form-floating mb-3">
                             <select formControlName="matricula" class="form-select" id="floatingSelect1">
-                                <option *ngFor="let matricula of matriculas" [ngValue]="matricula._matricula">{{matricula._matricula}}</option>
+                                <option *ngFor="let matricula of matriculas" [ngValue]="matricula._matricula">{{matricula._matricula}} - {{matricula._marca}}</option>
                             </select>
                             <label for="floatingSelect1">Escoge un Vehiculo</label>
                         </div>

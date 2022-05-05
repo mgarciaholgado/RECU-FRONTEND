@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -21,12 +22,14 @@ import { CrearClienteComponent } from './components/crear-cliente/crear-cliente.
 import { ListarClientesComponent } from './components/listar-clientes/listar-clientes.component';
 import { EditVehiculoComponent } from './components/edit-vehiculo/edit-vehiculo.component';
 import { EditReparacionComponent } from './components/edit-reparacion/edit-reparacion.component';
+import { ListarEmpleadosComponent } from './components/listar-empleados/listar-empleados.component';
+import { CrearEmpleadosComponent } from './components/crear-empleados/crear-empleados.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListarVehiculosComponent,
+    ListarEmpleadosComponent,
     
   ],
   imports: [
@@ -36,7 +39,7 @@ import { EditReparacionComponent } from './components/edit-reparacion/edit-repar
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent],
