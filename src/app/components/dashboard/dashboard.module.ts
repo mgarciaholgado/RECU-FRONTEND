@@ -16,6 +16,7 @@ import { EditVehiculoComponent } from '../edit-vehiculo/edit-vehiculo.component'
 import { EditReparacionComponent } from '../edit-reparacion/edit-reparacion.component';
 import { ListarVehiculosComponent } from '../listar-vehiculos/listar-vehiculos.component';
 import { CrearEmpleadosComponent } from '../crear-empleados/crear-empleados.component';
+import { ListarEmpleadosComponent } from '../listar-empleados/listar-empleados.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CrearEmpleadosComponent } from '../crear-empleados/crear-empleados.comp
     EditVehiculoComponent,
     EditReparacionComponent,
     ListarVehiculosComponent,
-    CrearEmpleadosComponent
+    CrearEmpleadosComponent,
+    ListarEmpleadosComponent,
   ],
   imports: [CommonModule, DashboardRoutingModule, SharedModule],
 })

@@ -24,12 +24,13 @@ import { EditVehiculoComponent } from './components/edit-vehiculo/edit-vehiculo.
 import { EditReparacionComponent } from './components/edit-reparacion/edit-reparacion.component';
 import { ListarEmpleadosComponent } from './components/listar-empleados/listar-empleados.component';
 import { CrearEmpleadosComponent } from './components/crear-empleados/crear-empleados.component';
+import { GraficoEmpleadosComponent } from './components/grafico-empleados/grafico-empleados.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListarEmpleadosComponent,
+    GraficoEmpleadosComponent,
     
   ],
   imports: [

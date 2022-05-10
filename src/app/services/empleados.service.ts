@@ -11,11 +11,25 @@ export class EmpleadosService {
   constructor(private http: HttpClient) {
     
    }
+
+   getEmpleados(): Observable<any>{
+    return this.http.get(this.url + '/verEmpleados')
+  }
+
+  getMecanicos(): Observable<any>{
+    return this.http.get(this.url + '/verMecanicos')
+  }
+
    crearMecanico(mecanico: tMecanico): Observable<any>{
     return this.http.post(this.url + '/addMecanico', mecanico);
   }
 
-  crearPintor(pintor: tPintor): Observable<any>{
-    return this.http.post(this.url + '/addPintor', pintor);
+  crearPintor(PINTOR: tPintor): Observable<any>{
+    return this.http.post(this.url + '/addPintor', PINTOR);
   }
+
+  eliminarEmpleado(dni: string): Observable<any>{
+    return this.http.delete(this.url + '/deleteEmpleado/' + dni);
+  }
+
 }

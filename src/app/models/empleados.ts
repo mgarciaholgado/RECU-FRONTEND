@@ -1,8 +1,8 @@
-export abstract class Empleado {
-    private _dni: string; 
-    private _nombre: string;
-    private _tipoEmpleado: string;
-    private _fechaContratacion: Date;
+export class Empleados {
+    public _dni: string; 
+    public _nombre: string;
+    public _tipoEmpleado: string;
+    public _fechaContratacion: Date;
 
 
 
@@ -13,53 +13,28 @@ export abstract class Empleado {
         this._fechaContratacion = fechaContratacion;
     }
 
-    get dni() {
-        return this._dni
-    }
-    get nombre() {
-        return this._nombre
-    }
-    get tipoEmpleado() {
-        return this._tipoEmpleado
-    }
-    get fechaContratacion(){
-        return this._fechaContratacion
-    }
+   
 }
 
-export class Mecanico extends Empleado {
-    private _sueldoMes:number;
- 
- 
-     constructor(dni: string, nombre: string, tipoEmpleado:string, fechaContratacion: Date, sueldoMes:number) {
-         
-         super(dni,nombre,tipoEmpleado,fechaContratacion);
-         this._sueldoMes = sueldoMes;
-     }
- 
-     //     GETTERS AND SETTERS      //
- 
-     get sueldoMes(){
-         return this._sueldoMes
-     }
- }
+export class Mecanico extends Empleados {
+  public _sueldoMes:number;
 
- export class Pintor extends Empleado {
-    _precioHora: Number;
-    
 
-    constructor(dni: string, nombre: string, tipoEmpleado:string, fechaContratacion: Date, precioHora:number) {
-        super(dni,nombre,tipoEmpleado,fechaContratacion);
-        this._precioHora = precioHora;
-    }
+   constructor(dni: string, nombre: string, tipoEmpleado:string, fechaContratacion: Date, sueldoMes:number) {
+       
+       super(dni,nombre,tipoEmpleado,fechaContratacion);
+       this._sueldoMes = sueldoMes;
+   }
 
-    //     GETTERS AND SETTERS      //
+   //     GETTERS AND SETTERS      //
 
-    get precioHora() {
-        return this._precioHora
-    }
-    
+   get sueldoMes(){
+       return this._sueldoMes
+   }
 }
+
+
+
 export type tEmpleado = {
     dni: string;
     nombre: string;

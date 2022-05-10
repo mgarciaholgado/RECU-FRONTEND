@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Empleados } from 'src/app/models/empleados';
+import { EmpleadosService } from 'src/app/services/empleados.service';
 
 @Component({
   selector: 'app-listar-empleados',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar-empleados.component.css']
 })
 export class ListarEmpleadosComponent implements OnInit {
-
-  constructor() { }
+  listarEmpleados: Empleados[] = [];
+  constructor(private empleadoService: EmpleadosService) { }
 
   ngOnInit(): void {
+    this.obtenerEmpleados();
+  }
+
+  obtenerEmpleados(){
+    this.empleadoService.getEmpleados().subscribe(data => {
+      this.listarEmpleados = data;
+    })
+  }
+
+  eliminarEmpleado(dni:any){
+    this.empleadoService.eliminarEmpleado(dni).subscribe(data =>{
+    this.obtenerEmpleados();
+    })
   }
 
 }

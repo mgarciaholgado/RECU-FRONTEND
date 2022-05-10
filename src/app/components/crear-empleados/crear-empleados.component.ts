@@ -1,8 +1,8 @@
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { tEmpleado, tMecanico, tPintor } from 'src/app/models/empleados';
-import { ClienteService } from 'src/app/services/cliente.service';
+import { tMecanico, tPintor } from 'src/app/models/empleados';
 import { EmpleadosService } from 'src/app/services/empleados.service';
 
 @Component({
@@ -11,7 +11,6 @@ import { EmpleadosService } from 'src/app/services/empleados.service';
   styleUrls: ['./crear-empleados.component.css'],
 })
 export class CrearEmpleadosComponent implements OnInit {
-  empleado!: any;
   empleadoForm: any;
   titulo = 'Crear Empleado';
   dni: string | null;
@@ -27,47 +26,45 @@ export class CrearEmpleadosComponent implements OnInit {
       nombre: ['', Validators.required],
       tipoEmpleado: ['', Validators.required],
       fechaContratacion: ['', Validators.required],
+      sueldoMes: ['', Validators.required],
+      precioHora: ['', Validators.required],
     });
     this.dni = this.aRouter.snapshot.paramMap.get('dni');
   }
 
   ngOnInit(): void {
-    //this.editEmpleado();
+    this.crearEmpleado();
   }
   crearEmpleado() {
-    const MECANICO: tMecanico = {
-      dni: this.empleadoForm.get('propietario')?.value,
-      nombre: this.empleadoForm.get('matricula')?.value,
-      tipoEmpleado: this.empleadoForm.get('marca')?.value,
-      fechaContratacion: this.empleadoForm.get('color')?.value,
-      sueldoMes: this.empleadoForm.get('sueldoMes')?.value,
-    };
-
-    const PINTOR: tPintor = {
-      dni: this.empleadoForm.get('propietario')?.value,
-      nombre: this.empleadoForm.get('matricula')?.value,
-      tipoEmpleado: this.empleadoForm.get('marca')?.value,
-      fechaContratacion: this.empleadoForm.get('color')?.value,
-      precioHora: this.empleadoForm.get('sueldoMes')?.value,
-    };
-
-    switch (this.empleado.tipoEmpleado) {
-      case 'mecanico':
-        let mecanico = MECANICO
-        this.empleadoService.crearMecanico(mecanico).subscribe((data) => {
-          this.router.navigate(['/dashboard']);
-        });
-        break;
-
-      case 'pintor':
-        let pintor = PINTOR
-        this.empleadoService.crearPintor(pintor).subscribe((data) => {
-          this.router.navigate(['/dashboard']);
-        });
-        break;
-
-      default:
-        break;
+    if (this.empleadoForm.value.tipoEmpleado == 'mecanico') {
+      const MECANICO: tMecanico = {
+        dni: this.empleadoForm.get('dni')?.value,
+        nombre: this.empleadoForm.get('nombre')?.value,
+        tipoEmpleado: this.empleadoForm.get('tipoEmpleado')?.value,
+        fechaContratacion: this.empleadoForm.get('fechaContratacion')?.value,
+        sueldoMes: this.empleadoForm.get('sueldoMes')?.value,
+      };
+      console.log(MECANICO)
+      this.empleadoService.crearMecanico(MECANICO).subscribe((data) => {
+        console.log(data)
+        this.router.navigate(['/ver-empleados']);
+      });
     }
+    if (this.empleadoForm.value.tipoEmpleado == 'pintor'){
+      
+      const PINTOR: tPintor = {
+        dni: this.empleadoForm.get('dni')?.value,
+        nombre: this.empleadoForm.get('nombre')?.value,
+        tipoEmpleado: this.empleadoForm.get('tipoEmpleado')?.value,
+        fechaContratacion: this.empleadoForm.get('fechaContratacion')?.value,
+        precioHora: this.empleadoForm.get('precioHora')?.value,
+      };
+
+      this.empleadoService.crearPintor(PINTOR).subscribe((data) => {
+        this.router.navigate(['/ver-empleados']);
+      });
+    }
+    
   }
+
 }
