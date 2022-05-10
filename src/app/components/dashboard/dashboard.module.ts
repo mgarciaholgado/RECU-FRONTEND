@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -17,12 +18,12 @@ import { EditReparacionComponent } from '../edit-reparacion/edit-reparacion.comp
 import { ListarVehiculosComponent } from '../listar-vehiculos/listar-vehiculos.component';
 import { CrearEmpleadosComponent } from '../crear-empleados/crear-empleados.component';
 import { ListarEmpleadosComponent } from '../listar-empleados/listar-empleados.component';
+import { GraficoEmpleadosComponent } from '../grafico-empleados/grafico-empleados.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     InicioComponent,
-    NavbarComponent,
     CrearVehiculosComponent,
     CrearReparacionComponent,
     ListarReparacionComponent,
@@ -33,7 +34,10 @@ import { ListarEmpleadosComponent } from '../listar-empleados/listar-empleados.c
     ListarVehiculosComponent,
     CrearEmpleadosComponent,
     ListarEmpleadosComponent,
+    NavbarComponent,
+    GraficoEmpleadosComponent,
+    
   ],
-  imports: [CommonModule, DashboardRoutingModule, SharedModule],
+  imports: [CommonModule, DashboardRoutingModule, SharedModule,HighchartsChartModule,],
 })
 export class DashboardModule {}

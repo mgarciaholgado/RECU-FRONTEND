@@ -16,8 +16,12 @@ export class EmpleadosService {
     return this.http.get(this.url + '/verEmpleados')
   }
 
-  getMecanicos(): Observable<any>{
+  getMecanicos(){
     return this.http.get(this.url + '/verMecanicos')
+  }
+
+  getPintores(){
+    return this.http.get(this.url + '/verPintores')
   }
 
    crearMecanico(mecanico: tMecanico): Observable<any>{

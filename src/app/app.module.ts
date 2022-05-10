@@ -25,12 +25,12 @@ import { EditReparacionComponent } from './components/edit-reparacion/edit-repar
 import { ListarEmpleadosComponent } from './components/listar-empleados/listar-empleados.component';
 import { CrearEmpleadosComponent } from './components/crear-empleados/crear-empleados.component';
 import { GraficoEmpleadosComponent } from './components/grafico-empleados/grafico-empleados.component';
+import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    GraficoEmpleadosComponent,
     
   ],
   imports: [
