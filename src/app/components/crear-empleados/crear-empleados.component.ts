@@ -27,14 +27,15 @@ export class CrearEmpleadosComponent implements OnInit {
       tipoEmpleado: ['', Validators.required],
       fechaContratacion: ['', Validators.required],
       sueldoMes: ['', Validators.required],
-      precioHora: ['', Validators.required],
+      horasExtra: ['',Validators.required],
+      empresaContratista: ['',Validators.required]
     });
     this.dni = this.aRouter.snapshot.paramMap.get('dni');
   }
 
   ngOnInit(): void {
-    this.crearEmpleado();
   }
+
   crearEmpleado() {
     if (this.empleadoForm.value.tipoEmpleado == 'mecanico') {
       const MECANICO: tMecanico = {
@@ -43,21 +44,22 @@ export class CrearEmpleadosComponent implements OnInit {
         tipoEmpleado: this.empleadoForm.get('tipoEmpleado')?.value,
         fechaContratacion: this.empleadoForm.get('fechaContratacion')?.value,
         sueldoMes: this.empleadoForm.get('sueldoMes')?.value,
+        horasExtra: this.empleadoForm.get('horasExtra')?.value,
       };
       console.log(MECANICO)
       this.empleadoService.crearMecanico(MECANICO).subscribe((data) => {
         console.log(data)
         this.router.navigate(['/ver-empleados']);
       });
-    }
-    if (this.empleadoForm.value.tipoEmpleado == 'pintor'){
+    }else{
       
       const PINTOR: tPintor = {
         dni: this.empleadoForm.get('dni')?.value,
         nombre: this.empleadoForm.get('nombre')?.value,
         tipoEmpleado: this.empleadoForm.get('tipoEmpleado')?.value,
         fechaContratacion: this.empleadoForm.get('fechaContratacion')?.value,
-        precioHora: this.empleadoForm.get('precioHora')?.value,
+        sueldoMes: this.empleadoForm.get('sueldoMes')?.value,
+        empresaContratista: this.empleadoForm.get('empresaContratista')?.value,
       };
 
       this.empleadoService.crearPintor(PINTOR).subscribe((data) => {

@@ -16,11 +16,11 @@ export class EmpleadosService {
     return this.http.get(this.url + '/verEmpleados')
   }
 
-  getMecanicos(){
+  getMecanicos():Observable<any>{
     return this.http.get(this.url + '/verMecanicos')
   }
 
-  getPintores(){
+  getPintores():Observable<any>{
     return this.http.get(this.url + '/verPintores')
   }
 

@@ -19,6 +19,7 @@ import { ListarVehiculosComponent } from '../listar-vehiculos/listar-vehiculos.c
 import { CrearEmpleadosComponent } from '../crear-empleados/crear-empleados.component';
 import { ListarEmpleadosComponent } from '../listar-empleados/listar-empleados.component';
 import { GraficoEmpleadosComponent } from '../grafico-empleados/grafico-empleados.component';
+import { GraficosInicioComponent } from '../graficos-inicio/graficos-inicio.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { GraficoEmpleadosComponent } from '../grafico-empleados/grafico-empleado
     ListarEmpleadosComponent,
     NavbarComponent,
     GraficoEmpleadosComponent,
+    GraficosInicioComponent
     
   ],
   imports: [CommonModule, DashboardRoutingModule, SharedModule,HighchartsChartModule,],

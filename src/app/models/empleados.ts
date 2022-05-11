@@ -3,57 +3,67 @@ export class Empleados {
     public _nombre: string;
     public _tipoEmpleado: string;
     public _fechaContratacion: Date;
+    public _sueldoMes: number;
 
 
 
-    constructor(dni: string, nombre: string, tipoEmpleado:string, fechaContratacion: Date) {
+    constructor(dni: string, nombre: string, tipoEmpleado:string, fechaContratacion: Date,sueldoMes:number) {
         this._dni = dni;
         this._nombre = nombre;
         this._tipoEmpleado = tipoEmpleado;
         this._fechaContratacion = fechaContratacion;
+        this._sueldoMes = sueldoMes;
+    }
+
+    calcularSueldoAño():number{
+      let sueldo = this._sueldoMes;
+      let sueldoAño = sueldo * 12
+      return sueldoAño
     }
 
    
 }
 
 export class Mecanico extends Empleados {
-  public _sueldoMes:number;
+  public _horasExtra:number;
 
 
-   constructor(dni: string, nombre: string, tipoEmpleado:string, fechaContratacion: Date, sueldoMes:number) {
+   constructor(dni: string, nombre: string, tipoEmpleado:string, fechaContratacion: Date, sueldoMes:number, horasExtra:number) {
        
-       super(dni,nombre,tipoEmpleado,fechaContratacion);
-       this._sueldoMes = sueldoMes;
+       super(dni,nombre,tipoEmpleado,fechaContratacion, sueldoMes);
+       this._horasExtra = horasExtra;
    }
 
    //     GETTERS AND SETTERS      //
 
-   get sueldoMes(){
-       return this._sueldoMes
+   get horasExtra(){
+       return this._horasExtra
    }
+
+   override calcularSueldoAño():number{
+    let sueldoAño: number = super.calcularSueldoAño();
+    let salarioTotal = sueldoAño + this._horasExtra
+    return Math.round(salarioTotal)
+   }
+
 }
 
 export class Pintor extends Empleados {
-  _precioHora: number;
+  public _empresaContratista: number;
   
 
-  constructor(dni: string, nombre: string, tipoEmpleado:string, fechaContratacion: Date, precioHora:number) {
-      super(dni,nombre,tipoEmpleado,fechaContratacion);
-      this._precioHora = precioHora;
+  constructor(dni: string, nombre: string, tipoEmpleado:string, fechaContratacion: Date,sueldoMes:number ,empresaContratista:number) {
+      super(dni,nombre,tipoEmpleado,fechaContratacion, sueldoMes);
+      this._empresaContratista = empresaContratista;
   }
 
   //     GETTERS AND SETTERS      //
 
-  get precioHora() {
-      return this._precioHora
+  get empresaContratista() {
+      return this._empresaContratista
   }
 
-  calcularSueldoMes():number{
-    let precioHora = this._precioHora;
-    let salarioMes = precioHora * 28;
-
-    return Math.round(salarioMes)
-  }
+  
   
 }
 
@@ -72,6 +82,7 @@ export type tMecanico = {
     tipoEmpleado: string;
     fechaContratacion: Date;
     sueldoMes: number;
+    horasExtra:number;
   };
   
   export type tPintor = {
@@ -79,5 +90,8 @@ export type tMecanico = {
     nombre: string;
     tipoEmpleado: string;
     fechaContratacion: Date;
-    precioHora: number;
+    sueldoMes: number;
+    empresaContratista:string;
     };
+
+

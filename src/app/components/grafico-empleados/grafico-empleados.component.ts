@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
-import { HighchartsChartModule } from 'highcharts-angular';
-import { Empleados, Mecanico, Pintor, tMecanico } from 'src/app/models/empleados';
+import { Mecanico } from 'src/app/models/empleados';
 import { EmpleadosService } from 'src/app/services/empleados.service';
 
 @Component({
@@ -11,7 +10,6 @@ import { EmpleadosService } from 'src/app/services/empleados.service';
 })
 export class GraficoEmpleadosComponent implements OnInit {
   listadoMecanicos: Mecanico[] = [];
-  listadoPintores: Pintor[] = [];
 
   Highcharts: typeof Highcharts = Highcharts;
 
@@ -28,7 +26,6 @@ export class GraficoEmpleadosComponent implements OnInit {
     },
     xAxis: {
       categories: [],
-      categories1: [],
     },
     credits: {
       enabled: false,
@@ -38,11 +35,6 @@ export class GraficoEmpleadosComponent implements OnInit {
         name: 'Salario Mes',
         data1: [],
         color: '#68A7AD',
-      },
-      {
-        name: 'Salario Mes',
-        data1: [],
-        color: '#BABD42',
       },
     ],
   };
@@ -56,13 +48,14 @@ export class GraficoEmpleadosComponent implements OnInit {
   obtenerSueldoMecanicos() {
     this.empleadoService.getMecanicos().subscribe(
       (result: any) => {
-        this.listadoMecanicos = result.map((renta: any) => {
+        this.listadoMecanicos = result.map((mecanico: any) => {
           return new Mecanico(
-            renta._dni,
-            renta._nombre,
-            renta._fechaContratacion,
-            renta._tipoEmpleado,
-            renta._sueldoMes
+            mecanico._dni,
+            mecanico._nombre,
+            mecanico._fechaContratacion,
+            mecanico._tipoEmpleado,
+            mecanico._sueldoMes,
+            mecanico._horasExtra
           );
         });
         
@@ -79,14 +72,12 @@ export class GraficoEmpleadosComponent implements OnInit {
         this.chartOptions.xAxis['categories'] = dataCategorias;
         this.chartOptions.series['name'] = 'Empresas';
 
-        Highcharts.chart('renta', this.chartOptions);
+        Highcharts.chart('mecanico', this.chartOptions);
       },
       (error) => console.log(error)
     );
   }
 
-  obtenerSueldoPintores(){
-
-  }
+  
 
 }

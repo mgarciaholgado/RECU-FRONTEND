@@ -26,13 +26,17 @@
                              class="form-control" placeholder="Fecha Contratacion">
                         </div>
                         <div class="mb-3">
-                            <input type="number" *ngIf="empleadoForm.value.tipoEmpleado == 'mecanico'" formControlName="sueldoMes"
-                             class="form-control" placeholder="Sueldo mes" >
+                            <input type="number" formControlName="sueldoMes"
+                             class="form-control" placeholder="Sueldo al mes">
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" *ngIf="empleadoForm.value.tipoEmpleado == 'mecanico'" formControlName="horasExtra"
+                             class="form-control" placeholder="Horas Extra">
                         </div>
 
                         <div class="mb-3">
-                            <input type="number" *ngIf="empleadoForm.value.tipoEmpleado == 'pintor'" formControlName="precioHora"
-                             class="form-control" placeholder="Precio Hora" >
+                            <input type="text" *ngIf="empleadoForm.value.tipoEmpleado == 'pintor'" formControlName="empresaContratista"
+                             class="form-control" placeholder="Empresa Pintor">
                         </div>
                         <div class="mt-3">
                             <button routerLink="/ver-empleados" class="btn btn-secondary btn-lg float-start">VOLVER</button>

@@ -12,6 +12,7 @@
                 <th scope="col">NOMBRE</th>
                 <th scope="col">PUESTO</th>
                 <th scope="col">FECHA INCORPORACION</th>
+                <th scope="col">SUELDO</th>
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -20,11 +21,10 @@
                 <th scope="row">{{ empleados._dni }}</th>
                 <td>{{ empleados._nombre }}</td>
                 <td>{{ empleados._tipoEmpleado }}</td>
-                <td>{{ empleados._fechaContratacion }}</td>
-                
-                
+                <td>{{ empleados._fechaContratacion | date: 'dd/MM/yyyy' }}</td>
+                <td>{{ empleados._sueldoMes | currency: "EUR"  }}</td>
+        
                 <td>
-                  <i [routerLink]="['/editar-empleado',empleados._dni]"class="fas fa-pen-to-square"></i>
                   <i (click)="eliminarEmpleado(empleados._dni)" class="fas fa-trash-can text-danger"></i>
                 </td>
               </tr>
