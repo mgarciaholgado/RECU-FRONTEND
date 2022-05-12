@@ -30,11 +30,15 @@ export class GraficoEmpleadosComponent implements OnInit {
     },
     credits: {
       enabled: false,
+    },accessibility: {
+      point: {
+        valueSuffix: '€'
+      }
     },
     series: [
       {
         name: 'Salario al Año',
-        data1: [],
+        data: [],
         color: '#68A7AD',
       },
     ],

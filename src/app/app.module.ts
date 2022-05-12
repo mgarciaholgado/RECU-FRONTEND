@@ -27,6 +27,7 @@ import { CrearEmpleadosComponent } from './components/crear-empleados/crear-empl
 import { GraficoEmpleadosComponent } from './components/grafico-empleados/grafico-empleados.component';
 import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
 import { GraficosInicioComponent } from './components/graficos-inicio/graficos-inicio.component';
+import { GraficoMvsPComponent } from './components/grafico-mvs-p/grafico-mvs-p.component';
 
 
 @NgModule({

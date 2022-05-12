@@ -33,10 +33,16 @@
                             <input type="number" *ngIf="empleadoForm.value.tipoEmpleado == 'mecanico'" formControlName="horasExtra"
                              class="form-control" placeholder="Horas Extra">
                         </div>
-
-                        <div class="mb-3">
-                            <input type="text" *ngIf="empleadoForm.value.tipoEmpleado == 'pintor'" formControlName="empresaContratista"
-                             class="form-control" placeholder="Empresa Pintor">
+                        
+                        <div class="form-floating mb-3" *ngIf="empleadoForm.value.tipoEmpleado == 'pintor'">
+                           
+                            <select formControlName="empresaContratista" class="form-select" id="floatingSelect2">
+                                <option value="CEYDE PINTORES">CEYDE PINTORES</option>
+                                <option value="PINTURAS SEVILLA">PINTURAS SEVILLA</option>
+                                <option value="BENITO BRICOMARK">BENITO BRICOMARK</option>
+                                
+                            </select>
+                            <label for="floatingSelect2">Empresa Pintor</label>
                         </div>
                         <div class="mt-3">
                             <button routerLink="/ver-empleados" class="btn btn-secondary btn-lg float-start">VOLVER</button>

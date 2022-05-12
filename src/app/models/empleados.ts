@@ -94,6 +94,18 @@ export class SalarioT {
   }
 }
 
+export class SalarioT2 {
+  public _dni: string;
+  public _nombre: string;
+  public _sueldoTotal: number;
+
+  public constructor(dni:string,nombre:string,sueldoTotal:number){
+    this._dni = dni,
+    this._nombre = nombre,
+    this._sueldoTotal = sueldoTotal
+  }
+}
+
 export type tMecanico = {
   dni: string;
   nombre: string;
