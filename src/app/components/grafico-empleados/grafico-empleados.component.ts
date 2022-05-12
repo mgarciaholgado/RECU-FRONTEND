@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
-import { Mecanico } from 'src/app/models/empleados';
+import { Empleados, Mecanico, SalarioT, tMecanico } from 'src/app/models/empleados';
 import { EmpleadosService } from 'src/app/services/empleados.service';
 
 @Component({
@@ -9,7 +9,8 @@ import { EmpleadosService } from 'src/app/services/empleados.service';
   styleUrls: ['./grafico-empleados.component.css'],
 })
 export class GraficoEmpleadosComponent implements OnInit {
-  listadoMecanicos: Mecanico[] = [];
+  arraySueldo: tMecanico[] = [];
+  listadoSalarios: SalarioT [] = [];
 
   Highcharts: typeof Highcharts = Highcharts;
 
@@ -32,7 +33,7 @@ export class GraficoEmpleadosComponent implements OnInit {
     },
     series: [
       {
-        name: 'Salario Mes',
+        name: 'Salario al Año',
         data1: [],
         color: '#68A7AD',
       },
@@ -42,42 +43,28 @@ export class GraficoEmpleadosComponent implements OnInit {
   constructor(private empleadoService: EmpleadosService) {}
 
   ngOnInit(): void {
-    this.obtenerSueldoMecanicos();
+    this.obtenerSueldoMecanicosAnual();
   }
 
-  obtenerSueldoMecanicos() {
-    this.empleadoService.getMecanicos().subscribe(
-      (result: any) => {
-        this.listadoMecanicos = result.map((mecanico: any) => {
-          return new Mecanico(
-            mecanico._dni,
-            mecanico._nombre,
-            mecanico._fechaContratacion,
-            mecanico._tipoEmpleado,
-            mecanico._sueldoMes,
-            mecanico._horasExtra
-          );
-        });
-        
-        const dataSeries = this.listadoMecanicos.map(
-          (x: Mecanico) => x._sueldoMes
-        );
+  obtenerSueldoMecanicosAnual(){
+    this.empleadoService.getAnualSalario().subscribe((data) =>{
+      this.listadoSalarios = data.map((salary:any)=>{
+        return new SalarioT(salary._dni,salary._nombre,salary._sueldoTotal)
+      })
 
-        const dataCategorias = this.listadoMecanicos.map(
-          (x: Mecanico) => x._nombre
-        );
+      const dataSeries = this.listadoSalarios.map((x: SalarioT)=> x._sueldoTotal)
+      const dataCategorias = this.listadoSalarios.map((x: SalarioT)=> x._nombre)
 
-        this.chartOptions.title['text'] = 'Ganancias de clientes empresariales';
-        this.chartOptions.series[0]['data'] = dataSeries;
-        this.chartOptions.xAxis['categories'] = dataCategorias;
-        this.chartOptions.series['name'] = 'Empresas';
+      this.chartOptions.title["text"] = "Salario Año Mecanicos"
+      this.chartOptions.series[0]["data"] = dataSeries
+      this.chartOptions.xAxis["categories"] = dataCategorias
+      this.chartOptions.series["name"] = "Mecanicos"
 
-        Highcharts.chart('mecanico', this.chartOptions);
-      },
-      (error) => console.log(error)
-    );
-  }
 
-  
+      Highcharts.chart("mecanico",this.chartOptions)
+      
+      
+    })
 
+    }
 }

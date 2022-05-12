@@ -46,7 +46,6 @@ export class CrearEmpleadosComponent implements OnInit {
         sueldoMes: this.empleadoForm.get('sueldoMes')?.value,
         horasExtra: this.empleadoForm.get('horasExtra')?.value,
       };
-      console.log(MECANICO)
       this.empleadoService.crearMecanico(MECANICO).subscribe((data) => {
         console.log(data)
         this.router.navigate(['/ver-empleados']);

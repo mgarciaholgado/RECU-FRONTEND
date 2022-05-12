@@ -1,97 +1,113 @@
 export class Empleados {
-    public _dni: string; 
-    public _nombre: string;
-    public _tipoEmpleado: string;
-    public _fechaContratacion: Date;
-    public _sueldoMes: number;
+  public _dni: string;
+  public _nombre: string;
+  public _fechaContratacion: Date;
+  public _sueldoMes: number;
 
+  constructor(
+    dni: string,
+    nombre: string,
+    fechaContratacion: Date,
+    sueldoMes: number
+  ) {
+    this._dni = dni;
+    this._nombre = nombre;
+    this._fechaContratacion = fechaContratacion;
+    this._sueldoMes = sueldoMes;
+  }
 
-
-    constructor(dni: string, nombre: string, tipoEmpleado:string, fechaContratacion: Date,sueldoMes:number) {
-        this._dni = dni;
-        this._nombre = nombre;
-        this._tipoEmpleado = tipoEmpleado;
-        this._fechaContratacion = fechaContratacion;
-        this._sueldoMes = sueldoMes;
-    }
-
-    calcularSueldoAño():number{
-      let sueldo = this._sueldoMes;
-      let sueldoAño = sueldo * 12
-      return sueldoAño
-    }
-
-   
+  calcularSueldoAño(): number {
+    let sueldo = this._sueldoMes;
+    let sueldoAño = sueldo * 12;
+    return sueldoAño;
+  }
 }
 
 export class Mecanico extends Empleados {
-  public _horasExtra:number;
+  public _horasExtra: number;
 
+  constructor(
+    dni: string,
+    nombre: string,
+    fechaContratacion: Date,
+    sueldoMes: number,
+    horasExtra: number
+  ) {
+    super(dni, nombre, fechaContratacion, sueldoMes);
+    this._horasExtra = horasExtra;
+  }
 
-   constructor(dni: string, nombre: string, tipoEmpleado:string, fechaContratacion: Date, sueldoMes:number, horasExtra:number) {
-       
-       super(dni,nombre,tipoEmpleado,fechaContratacion, sueldoMes);
-       this._horasExtra = horasExtra;
-   }
+  //     GETTERS AND SETTERS      //
 
-   //     GETTERS AND SETTERS      //
+  get horasExtra() {
+    return this._horasExtra;
+  }
 
-   get horasExtra(){
-       return this._horasExtra
-   }
-
-   override calcularSueldoAño():number{
+  override calcularSueldoAño(): number {
     let sueldoAño: number = super.calcularSueldoAño();
-    let salarioTotal = sueldoAño + this._horasExtra
-    return Math.round(salarioTotal)
-   }
-
+    let calculoHoras: number = this.horasExtra * 20;
+    let salarioTotal = sueldoAño + calculoHoras;
+    return Math.round(salarioTotal);
+  }
 }
 
 export class Pintor extends Empleados {
   public _empresaContratista: number;
-  
 
-  constructor(dni: string, nombre: string, tipoEmpleado:string, fechaContratacion: Date,sueldoMes:number ,empresaContratista:number) {
-      super(dni,nombre,tipoEmpleado,fechaContratacion, sueldoMes);
-      this._empresaContratista = empresaContratista;
+  constructor(
+    dni: string,
+    nombre: string,
+    fechaContratacion: Date,
+    sueldoMes: number,
+    empresaContratista: number
+  ) {
+    super(dni, nombre, fechaContratacion, sueldoMes);
+    this._empresaContratista = empresaContratista;
   }
 
   //     GETTERS AND SETTERS      //
 
   get empresaContratista() {
-      return this._empresaContratista
+    return this._empresaContratista;
   }
-
-  
-  
 }
 
-
-
 export type tEmpleado = {
-    dni: string;
-    nombre: string;
-    tipoEmpleado: string;
-    fechaContratacion: Date;
-  };
+  _dni: string;
+  _nombre: string;
+  _tipoEmpleado: string;
+  _fechaContratacion: Date;
+  _sueldoMes: number;
+  _horasExtra: number;
+  _empresaContratista: number;
+};
+
+export class SalarioT {
+  public _dni: string;
+  public _nombre: string;
+  public _sueldoTotal: number;
+
+  public constructor(dni:string,nombre:string,sueldoTotal:number){
+    this._dni = dni,
+    this._nombre = nombre,
+    this._sueldoTotal = sueldoTotal
+  }
+}
 
 export type tMecanico = {
-    dni: string;
-    nombre: string;
-    tipoEmpleado: string;
-    fechaContratacion: Date;
-    sueldoMes: number;
-    horasExtra:number;
-  };
-  
-  export type tPintor = {
-    dni: string;
-    nombre: string;
-    tipoEmpleado: string;
-    fechaContratacion: Date;
-    sueldoMes: number;
-    empresaContratista:string;
-    };
+  dni: string;
+  nombre: string;
+  tipoEmpleado: string;
+  fechaContratacion: Date;
+  sueldoMes: number;
+  horasExtra: number;
+};
 
-
+export type tPintor = {
+  dni: string;
+  nombre: string;
+  tipoEmpleado: string;
+  fechaContratacion: Date;
+  sueldoMes: number;
+  empresaContratista: string;
+};

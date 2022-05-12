@@ -4,36 +4,37 @@ import { Observable } from 'rxjs';
 import { tMecanico, tPintor } from '../models/empleados';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EmpleadosService {
   url = 'http://localhost:3000';
-  constructor(private http: HttpClient) {
-    
-   }
+  constructor(private http: HttpClient) {}
 
-   getEmpleados(): Observable<any>{
-    return this.http.get(this.url + '/verEmpleados')
+  getEmpleados(): Observable<any> {
+    return this.http.get(this.url + '/verEmpleados');
   }
 
-  getMecanicos():Observable<any>{
-    return this.http.get(this.url + '/verMecanicos')
+  getAnualSalario():Observable<any> {
+    return this.http.get(this.url + '/sueldo');
   }
 
-  getPintores():Observable<any>{
-    return this.http.get(this.url + '/verPintores')
+  getMecanicos(): Observable<any> {
+    return this.http.get(this.url + '/verMecanicos');
   }
 
-   crearMecanico(mecanico: tMecanico): Observable<any>{
-    return this.http.post(this.url + '/addMecanico', mecanico);
+  getPintores(): Observable<any> {
+    return this.http.get(this.url + '/verPintores');
   }
 
-  crearPintor(PINTOR: tPintor): Observable<any>{
-    return this.http.post(this.url + '/addPintor', PINTOR);
+  crearMecanico(mecanico: tMecanico): Observable<any> {
+    return this.http.post(this.url + '/addEmpleado', mecanico);
   }
 
-  eliminarEmpleado(dni: string): Observable<any>{
+  crearPintor(PINTOR: tPintor): Observable<any> {
+    return this.http.post(this.url + '/addEmpleado', PINTOR);
+  }
+
+  eliminarEmpleado(dni: string): Observable<any> {
     return this.http.delete(this.url + '/deleteEmpleado/' + dni);
   }
-
 }
