@@ -38,12 +38,12 @@ export class CrearVehiculosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.editVehiculo();
+    this.crearVehiculo()
   }
 
   crearVehiculo() {
     const VEHICULO: tVehiculo = {
-      DNIpropietario:this.vehiculoForm.get('propietario')?.value,
+      DNIpropietario:this.vehiculoForm.get('DNIpropietario')?.value,
       matricula: this.vehiculoForm.get('matricula')?.value,
       marca: this.vehiculoForm.get('marca')?.value,
       color: this.vehiculoForm.get('color')?.value,
@@ -53,29 +53,14 @@ export class CrearVehiculosComponent implements OnInit {
       this._vehiculosService
         .editarVehiculo(this.matricula, VEHICULO)
         .subscribe((data) => {
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/ver-vehiculos']);
         });
     } else {
       this._vehiculosService.crearVehiculo(VEHICULO).subscribe((data) => {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/ver-vehiculos']);
       });
     }
   }
 
-  editVehiculo() {
-    if (this.matricula !== null) {
-      this.titulo = 'Editar Vehiculo';
-      this._vehiculosService
-        .obtenerVehiculo(this.matricula)
-        .subscribe((data) => {
-          this.vehiculoForm.setValue({
-            DNIpropietario: data._DNIpropietario,
-            matricula: data._matricula,
-            marca: data._marca,
-            color: data._color,
-            tVehiculo: data._tipoVehiculo,
-          });
-        });
-    }
-  }
+  
 }

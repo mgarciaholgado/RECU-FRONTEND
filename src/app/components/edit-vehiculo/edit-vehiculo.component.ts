@@ -45,11 +45,11 @@ export class EditVehiculoComponent implements OnInit {
       this._vehiculosService
         .editarVehiculo(this.matricula, VEHICULO)
         .subscribe((data) => {
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/ver-vehiculos']);
         });
     } else {
       this._vehiculosService.crearVehiculo(VEHICULO).subscribe((data) => {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/ver-vehiculos']);
       });
     }
   }
