@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
-import { Empleados, Mecanico, SalarioT, tMecanico } from 'src/app/models/empleados';
+import { SalarioT, tEmpleado, tMecanico } from 'src/app/models/empleados';
 import { EmpleadosService } from 'src/app/services/empleados.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { EmpleadosService } from 'src/app/services/empleados.service';
   styleUrls: ['./grafico-empleados.component.css'],
 })
 export class GraficoEmpleadosComponent implements OnInit {
-  arraySueldo: tMecanico[] = [];
+  arraySueldo: tEmpleado[] = [];
   listadoSalarios: SalarioT [] = [];
 
   Highcharts: typeof Highcharts = Highcharts;
@@ -37,9 +37,14 @@ export class GraficoEmpleadosComponent implements OnInit {
     },
     series: [
       {
-        name: 'Salario al Año',
+        name: 'Mecanicos',
         data: [],
         color: '#68A7AD',
+      },
+      {
+        name: 'Pintores',
+        data: [],
+        color: '#ffff51',
       },
     ],
   };
@@ -47,14 +52,16 @@ export class GraficoEmpleadosComponent implements OnInit {
   constructor(private empleadoService: EmpleadosService) {}
 
   ngOnInit(): void {
-    this.obtenerSueldoMecanicosAnual();
+    this.obtenerSueldoEmpleados();
   }
 
-  obtenerSueldoMecanicosAnual(){
+  obtenerSueldoEmpleados(){
     this.empleadoService.getAnualSalario().subscribe((data) =>{
       this.listadoSalarios = data.map((salary:any)=>{
         return new SalarioT(salary._dni,salary._nombre,salary._sueldoTotal)
+        
       })
+      console.log(this.listadoSalarios)
 
       const dataSeries = this.listadoSalarios.map((x: SalarioT)=> x._sueldoTotal)
       const dataCategorias = this.listadoSalarios.map((x: SalarioT)=> x._nombre)
