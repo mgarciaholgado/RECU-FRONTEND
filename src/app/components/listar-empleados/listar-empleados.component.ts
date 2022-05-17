@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Empleados, tEmpleado } from 'src/app/models/empleados';
+import { Empleado, tEmpleado } from 'src/app/models/empleados';
 import { EmpleadosService } from 'src/app/services/empleados.service';
 
 @Component({
@@ -11,9 +11,6 @@ export class ListarEmpleadosComponent implements OnInit {
   listarEmpleados: tEmpleado[] = [];
   constructor(private empleadoService: EmpleadosService) { 
 
-   /* this.empleadoService.calcularSalario(this.dni_empleado).subscribe((respuesta) => {
-      this.salario = respuesta.toString()
-    })*/
   }
 
   ngOnInit(): void {

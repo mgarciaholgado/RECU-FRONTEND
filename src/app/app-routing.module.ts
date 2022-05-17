@@ -13,6 +13,7 @@ import { ListarClientesComponent } from './components/listar-clientes/listar-cli
 import { ListarEmpleadosComponent } from './components/listar-empleados/listar-empleados.component';
 import { ListarReparacionComponent } from './components/listar-reparacion/listar-reparacion.component';
 import { ListarVehiculosComponent } from './components/listar-vehiculos/listar-vehiculos.component';
+import { ListarVehiculosClienteComponent } from './listar-vehiculos-cliente/listar-vehiculos-cliente.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'editar-reparacion/:codigo', component: EditReparacionComponent },
   { path: 'editar-vehiculo/:matricula', component: EditVehiculoComponent },
   { path: 'editar-cliente/:dni', component:  CrearClienteComponent },
+  { path: 'ver-vehiculos-cliente/:dni', component:  ListarVehiculosClienteComponent },
   { path: '**', redirectTo: 'login', pathMatch:'full'}
 ];
 

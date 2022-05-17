@@ -44,3 +44,20 @@ export type tVehiculo = {
   color: string;
   tipoVehiculo: string;
 };
+
+export class VehiculosT {
+  public _matricula: string | null;
+  public _marca: string | null;
+  public _color: string | null;
+  public _tipoVehiculo: string | null;
+
+  public constructor(matricula: string,
+    marca: string,
+    color: string,
+    tipoVehiculo: string){
+      this._matricula = matricula;
+      this._marca = marca;
+      this._color = color;
+      this._tipoVehiculo = tipoVehiculo;
+  }
+}

@@ -1,4 +1,4 @@
-export class Empleados {
+export class Empleado {
   public _dni: string;
   public _nombre: string;
   public _fechaContratacion: Date;
@@ -23,7 +23,7 @@ export class Empleados {
   }
 }
 
-export class Mecanico extends Empleados {
+export class Mecanico extends Empleado {
   public _horasExtra: number;
 
   constructor(
@@ -51,7 +51,7 @@ export class Mecanico extends Empleados {
   }
 }
 
-export class Pintor extends Empleados {
+export class Pintor extends Empleado {
   public _empresaContratista: number;
 
   constructor(
@@ -82,10 +82,17 @@ export type tEmpleado = {
   _empresaContratista: number;
 };
 
+export type tSalario = {
+  _dni: string | null;
+  _nombre: string | null;
+ _sueldoTotal: number | null;
+  
+  }; 
+
 export class SalarioT {
-  public _dni: string;
-  public _nombre: string;
-  public _sueldoTotal: number;
+  public _dni: string | null;
+  public _nombre: string | null;
+  public _sueldoTotal: number | null;
 
   public constructor(dni:string,nombre:string,sueldoTotal:number){
     this._dni = dni,

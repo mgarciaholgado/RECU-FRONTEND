@@ -21,6 +21,7 @@ import { ListarEmpleadosComponent } from '../listar-empleados/listar-empleados.c
 import { GraficoEmpleadosComponent } from '../grafico-empleados/grafico-empleados.component';
 import { GraficosInicioComponent } from '../graficos-inicio/graficos-inicio.component';
 import { GraficoMvsPComponent } from '../grafico-mvs-p/grafico-mvs-p.component';
+import { ListarVehiculosClienteComponent } from 'src/app/listar-vehiculos-cliente/listar-vehiculos-cliente.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { GraficoMvsPComponent } from '../grafico-mvs-p/grafico-mvs-p.component';
     NavbarComponent,
     GraficoEmpleadosComponent,
     GraficosInicioComponent,
-    GraficoMvsPComponent
+    GraficoMvsPComponent,
+    ListarVehiculosClienteComponent
     
   ],
   imports: [CommonModule, DashboardRoutingModule, SharedModule,HighchartsChartModule,],

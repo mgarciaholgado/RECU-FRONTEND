@@ -23,6 +23,7 @@
                 <td>
                   <i [routerLink]="['/editar-cliente',clientes._dni]"class="fas fa-pen-to-square"></i>
                   <i (click)="eliminarCliente(clientes._dni)" class="fas fa-trash-can text-danger"></i>
+                  <i [routerLink]="['/ver-vehiculos-cliente',clientes._dni]" class="fas fa-solid fa-car"></i>
                 </td>
               </tr>
             </tbody>

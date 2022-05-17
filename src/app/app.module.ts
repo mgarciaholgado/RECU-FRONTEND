@@ -13,21 +13,8 @@ import { APP_BASE_HREF } from '@angular/common';
 
 // COMPONENTES
 import { AppComponent } from './app.component';
-import { CrearReparacionComponent } from './components/crear-reparacion/crear-reparacion.component';
-import { ListarReparacionComponent } from './components/listar-reparacion/listar-reparacion.component';
 import { SharedModule } from './components/shared/shared.module';
-import { ListarVehiculosComponent } from './components/listar-vehiculos/listar-vehiculos.component';
-import { CrearVehiculosComponent } from './components/crear-vehiculos/crear-vehiculos.component';
-import { CrearClienteComponent } from './components/crear-cliente/crear-cliente.component';
-import { ListarClientesComponent } from './components/listar-clientes/listar-clientes.component';
-import { EditVehiculoComponent } from './components/edit-vehiculo/edit-vehiculo.component';
-import { EditReparacionComponent } from './components/edit-reparacion/edit-reparacion.component';
-import { ListarEmpleadosComponent } from './components/listar-empleados/listar-empleados.component';
-import { CrearEmpleadosComponent } from './components/crear-empleados/crear-empleados.component';
-import { GraficoEmpleadosComponent } from './components/grafico-empleados/grafico-empleados.component';
-import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
-import { GraficosInicioComponent } from './components/graficos-inicio/graficos-inicio.component';
-import { GraficoMvsPComponent } from './components/grafico-mvs-p/grafico-mvs-p.component';
+import { ListarVehiculosClienteComponent } from './listar-vehiculos-cliente/listar-vehiculos-cliente.component';
 
 
 @NgModule({

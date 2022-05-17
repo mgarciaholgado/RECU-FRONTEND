@@ -15,6 +15,10 @@ export class ClienteService {
     return this.http.get(this.url + '/verClientes')
   }
 
+  getClientesVehiculos(dni:string): Observable<any>{
+    return this.http.get(this.url + '/look/' + dni)
+  }
+
   eliminarCliente(dni: string): Observable<any>{
     return this.http.delete(this.url + '/deleteCliente/' + dni);
   }

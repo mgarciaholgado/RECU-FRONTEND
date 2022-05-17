@@ -37,14 +37,9 @@ export class GraficoEmpleadosComponent implements OnInit {
     },
     series: [
       {
-        name: 'Mecanicos',
+        name: 'Empleados',
         data: [],
         color: '#68A7AD',
-      },
-      {
-        name: 'Pintores',
-        data: [],
-        color: '#ffff51',
       },
     ],
   };
@@ -66,13 +61,13 @@ export class GraficoEmpleadosComponent implements OnInit {
       const dataSeries = this.listadoSalarios.map((x: SalarioT)=> x._sueldoTotal)
       const dataCategorias = this.listadoSalarios.map((x: SalarioT)=> x._nombre)
 
-      this.chartOptions.title["text"] = "Salario Año Mecanicos"
+      this.chartOptions.title["text"] = "Salario Año Empleados"
       this.chartOptions.series[0]["data"] = dataSeries
       this.chartOptions.xAxis["categories"] = dataCategorias
-      this.chartOptions.series["name"] = "Mecanicos"
+      this.chartOptions.series["name"] = "Empleados"
 
 
-      Highcharts.chart("mecanico",this.chartOptions)
+      Highcharts.chart("empleados",this.chartOptions)
       
       
     })
