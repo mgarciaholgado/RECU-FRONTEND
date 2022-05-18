@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -30,6 +31,8 @@ import { ListarVehiculosClienteComponent } from './listar-vehiculos-cliente/list
     HttpClientModule,
     SharedModule,
     RouterModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent],

@@ -6,35 +6,69 @@
                 <div class="card-body text-center">
                     <span class="titulo">{{ titulo | uppercase}}</span>
                     <form class="mt-3" [formGroup]="vehiculoForm" (ngSubmit)="crearVehiculo()">
+                        <div class="cuidado" *ngIf="vehiculoForm.get('DNIpropietario')?.hasError('required') && vehiculoForm.get('DNIpropietario')?.touched">
+                            <span><strong style="color: #FCBE11;">DNI PROPIETARIO</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
                         <div class="form-floating mb-3">
                             <select formControlName="DNIpropietario" class="form-select" id="floatingSelect1">
                                 <option *ngFor="let dni of propietarios" [ngValue]="dni._dni">{{dni._dni}} - {{dni._nombre}}</option>
                             </select>
-                            <label for="floatingSelect1">Propietario del vehiculo</label>
+                            <label for="floatingSelect1">PROPIETARIO DEL VEHICULO</label>
                         </div>
-                        <div class="mb-3">
-                            <input type="text" formControlName="matricula"
-                             class="form-control" placeholder="Matricula">
+                        <div class="cuidado" *ngIf="vehiculoForm.get('matricula')?.hasError('required') && vehiculoForm.get('matricula')?.touched">
+                            <span><strong style="color: #FCBE11;">MATRICULA</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 form-floating">
+                            <input type="text"  formControlName="matricula"
+                             class="form-control" id="floatingInputInvalid"> 
+                             <label for="floatingInputInvalid">MATRICULA VEHICULO</label>
+                        </div>
+                        <div class="cuidado" *ngIf="vehiculoForm.get('marca')?.hasError('required') && vehiculoForm.get('marca')?.touched">
+                            <span><strong style="color: #FCBE11;">MARCA</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                         <div class="mb-3 form-floating">
                             <input type="text" formControlName="marca"
-                             class="form-control" placeholder="Marca del vehiculo">
+                             class="form-control">
+                             <label for="floatingInputInvalid">MARCA VEHICULO</label>
                         </div>
-                        <div class="mb-3">
+                        <div class="cuidado" *ngIf="vehiculoForm.get('modelo')?.hasError('required') && vehiculoForm.get('modelo')?.touched">
+                            <span><strong style="color: #FCBE11;">MODELO</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input type="text" formControlName="modelo"
+                             class="form-control" id="floatingInputInvalid">
+                             <label for="floatingInputInvalid">MODELO VEHICULO</label>
+                        </div>
+                        <div class="cuidado" *ngIf="vehiculoForm.get('color')?.hasError('required') && vehiculoForm.get('color')?.touched">
+                            <span><strong style="color: #FCBE11;">COLOR</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            
                             <input type="text" formControlName="color"
-                             class="form-control" placeholder="Color del vehiculo">
+                             class="form-control" id="floatingInputInvalid">
+                             <label for="floatingInputInvalid">COLOR VEHICULO</label>
+                        </div>
+                        <div class="cuidado" *ngIf="vehiculoForm.get('precio')?.hasError('required') && vehiculoForm.get('precio')?.touched">
+                            <span><strong style="color: #FCBE11;">PRECIO</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input type="number" formControlName="precio"
+                             class="form-control" id="floatingInputInvalid">
+                             <label for="floatingInputInvalid">PRECIO VEHICULO</label>
+                        </div>
+                        <div class="cuidado" *ngIf="vehiculoForm.get('tVehiculo')?.hasError('required') && vehiculoForm.get('tVehiculo')?.touched">
+                            <span><strong style="color: #FCBE11;">TIPO VEHICULO</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
                         </div>
                         <div class="form-floating">
-                            
                             <select formControlName="tVehiculo" class="form-select" id="floatingSelect">
                                 <option>Deportivo</option>
                                 <option>Todoterreno</option>
                             </select>
-                            <label for="floatingSelect">Tipo de Vehiculo</label>
+                            <label for="floatingSelect">TIPO VEHICULO</label>
                         </div>
                         <div class="mt-3">
-                            <button routerLink="ver-vehiculos" class="btn btn-secondary btn-lg float-start">VOLVER</button>
-                            <button type="submit" class="btn btn-success btn-lg float-end">ENVIAR</button>
+                            <button routerLink="/ver-vehiculos" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+                            <button type="submit" [disabled]="vehiculoForm.invalid" class="btn btn-success btn-lg float-end">ENVIAR</button>
                         </div>
                     </form>
                 </div>

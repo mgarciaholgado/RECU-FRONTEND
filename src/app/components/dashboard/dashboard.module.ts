@@ -22,6 +22,7 @@ import { GraficoEmpleadosComponent } from '../grafico-empleados/grafico-empleado
 import { GraficosInicioComponent } from '../graficos-inicio/graficos-inicio.component';
 import { GraficoMvsPComponent } from '../grafico-mvs-p/grafico-mvs-p.component';
 import { ListarVehiculosClienteComponent } from 'src/app/listar-vehiculos-cliente/listar-vehiculos-cliente.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ListarVehiculosClienteComponent } from 'src/app/listar-vehiculos-client
     GraficoEmpleadosComponent,
     GraficosInicioComponent,
     GraficoMvsPComponent,
-    ListarVehiculosClienteComponent
+    ListarVehiculosClienteComponent,
+   
     
   ],
   imports: [CommonModule, DashboardRoutingModule, SharedModule,HighchartsChartModule,],

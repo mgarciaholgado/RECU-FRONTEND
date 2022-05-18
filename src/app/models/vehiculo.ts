@@ -1,47 +1,59 @@
-export class Vehiculos {
+export  class Vehiculos {
   public _DNIpropietario: string;
-  public _matricula: string;
+  public _matricula: string; 
   public _marca: string;
+  public _modelo: string;
   public _color: string;
+  public _precio: number;
   public _tipoVehiculo: string;
 
-  constructor(
-    DNIpropietario: string,
-    matricula: string,
-    marca: string,
-    color: string,
-    tipoVehiculo: string
-  ) {
-    this._DNIpropietario = DNIpropietario;
-    this._matricula = matricula;
-    this._marca = marca;
-    this._color = color;
-    this._tipoVehiculo = tipoVehiculo;
+
+  constructor(DNIpropietario: string, matricula: string, marca: string, modelo: string, color: string, precio: number,tipoVehiculo:string) {
+      this._DNIpropietario = DNIpropietario
+      this._matricula = matricula;
+      this._marca = marca;
+      this._modelo = modelo
+      this._color = color;
+      this._precio = precio;
+      this._tipoVehiculo = tipoVehiculo;
   }
 
+  //     GETTERS AND SETTERS      //
 
+  get DNIpropietario() {
+      return this._DNIpropietario
+  }
 
   get matricula() {
-    return this._matricula;
+      return this._matricula
+  }
+  get marca() {
+      return this._marca
+  }
+
+  get modelo() {
+      return this._modelo
   }
 
   get color() {
-    return this._color;
+      return this._color
   }
 
-  get marca() {
-    return this._marca;
+  get precio(){
+      return this._precio
   }
-
-  get tipoVehiculo() {
-    return this._tipoVehiculo;
+  
+  get tipoVehiculo(){
+      return this._tipoVehiculo
   }
 }
 export type tVehiculo = {
   DNIpropietario:string;
   matricula: string;
   marca: string;
+  modelo: string;
   color: string;
+  precio: number;
   tipoVehiculo: string;
 };
 
