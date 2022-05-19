@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { tVehiculo } from 'src/app/models/vehiculo';
+import { tDeportivo, tTodoterreno, tVehiculo } from 'src/app/models/vehiculo';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { VehiculoService } from 'src/app/services/vehiculos.service';
 
@@ -37,16 +37,20 @@ export class CrearVehiculosComponent implements OnInit {
       color: ['', Validators.required],
       precio: ['', Validators.required],
       tVehiculo: ['', Validators.required],
+      potencia: ['', Validators.required],
+      traccion: ['', Validators.required],
     });
     this.matricula = this.aRouter.snapshot.paramMap.get('matricula');
   }
 
   ngOnInit(): void {
-    this.editVehiculo()
+   
   }
 
   crearVehiculo() {
-    const VEHICULO: tVehiculo = {
+    if (this.vehiculoForm.value.tVehiculo == 'Todoterreno'){
+      
+      const TODOTERRENO: tTodoterreno = {
       DNIpropietario:this.vehiculoForm.get('DNIpropietario')?.value,
       matricula: this.vehiculoForm.get('matricula')?.value,
       marca: this.vehiculoForm.get('marca')?.value,
@@ -54,35 +58,30 @@ export class CrearVehiculosComponent implements OnInit {
       color: this.vehiculoForm.get('color')?.value,
       precio: this.vehiculoForm.get('precio')?.value,
       tipoVehiculo: this.vehiculoForm.get('tVehiculo')?.value,
+      traccion: this.vehiculoForm.get('traccion')?.value,
     };
-    if (this.matricula !== null) {
-      this._vehiculosService
-        .editarVehiculo(this.matricula, VEHICULO)
-        .subscribe((data) => {
-          this.router.navigate(['/ver-vehiculos']);
-        });
-    } else {
-      this._vehiculosService.crearVehiculo(VEHICULO).subscribe((data) => {
-        this.toastr.success('Vehiculo creado con exito!!');
-        this.router.navigate(['/ver-vehiculos']);
-      });
-    }
+    this._vehiculosService.crearTodoterreno(TODOTERRENO).subscribe((data) => {
+      this.toastr.success('Vehiculo creado con exito!!');
+      this.router.navigate(['/ver-vehiculos']);
+    });
+  } else if (this.vehiculoForm.value.tVehiculo == 'Deportivo'){
+    const DEPORTIVO: tDeportivo = {
+      DNIpropietario:this.vehiculoForm.get('DNIpropietario')?.value,
+      matricula: this.vehiculoForm.get('matricula')?.value,
+      marca: this.vehiculoForm.get('marca')?.value,
+      modelo: this.vehiculoForm.get('modelo')?.value,
+      color: this.vehiculoForm.get('color')?.value,
+      precio: this.vehiculoForm.get('precio')?.value,
+      tipoVehiculo: this.vehiculoForm.get('tVehiculo')?.value,
+      potencia: this.vehiculoForm.get('potencia')?.value,
+    };
+    this._vehiculosService.crearDeportivo(DEPORTIVO).subscribe((data) => {
+      this.toastr.success('Vehiculo creado con exito!!');
+      this.router.navigate(['/ver-vehiculos']);
+    });
+  }
+    
  
-  }
-  editVehiculo() {
-    if (this.matricula !== null) {
-      this._vehiculosService
-        .obtenerVehiculo(this.matricula)
-        .subscribe((data) => {
-          this.vehiculoForm.setValue({
-            DNIpropietario: data._DNIpropietario,
-            matricula: data._matricula,
-            marca: data._marca,
-            color: data._color,
-            tVehiculo: data._tipoVehiculo,
-          });
-        });
-    }
-  }
+}
   
 }

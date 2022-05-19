@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Reparaciones, tReparaciones } from 'src/app/models/reparacion';
 import { ReparacionService } from 'src/app/services/reparacion.service';
 
@@ -18,7 +19,8 @@ export class EditReparacionComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private _reparacionesService: ReparacionService,
-    private aRouter: ActivatedRoute
+    private aRouter: ActivatedRoute,
+    private toastr: ToastrService
   ) {
     this.editReparacionForm = this.fb.group({
       codigo: ['', Validators.required],
@@ -45,12 +47,14 @@ export class EditReparacionComponent implements OnInit {
       this._reparacionesService
         .editarReparacion(this.codigo, REPARACION)
         .subscribe((data) => {
+          this.toastr.success('Reparacion editada con exito !!');
           this.router.navigate(['/ver-reparaciones']);
         });
     } else {
       this._reparacionesService
         .crearReparaciones(REPARACION)
         .subscribe((data) => {
+          this.toastr.success('Reparacion creada con exito !!');
           this.router.navigate(['/ver-reparaciones']);
         });
     }

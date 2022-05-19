@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { tVehiculo } from '../models/vehiculo';
+import { tDeportivo, tTodoterreno, tVehiculo } from '../models/vehiculo';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +18,12 @@ export class VehiculoService {
     return this.http.delete(this.url + '/deleteVehiculo/' + matricula);
   }
 
-  crearVehiculo(vehiculo: tVehiculo): Observable<any>{
-    return this.http.post(this.url + '/addVehiculo', vehiculo);
+  crearTodoterreno(TODOTERRENO: tTodoterreno): Observable<any>{
+    return this.http.post(this.url + '/addVehiculo', TODOTERRENO);
+  }
+
+  crearDeportivo(DEPORTIVO: tDeportivo): Observable<any>{
+    return this.http.post(this.url + '/addVehiculo', DEPORTIVO);
   }
 
   obtenerVehiculo(matricula:string):Observable<any>{

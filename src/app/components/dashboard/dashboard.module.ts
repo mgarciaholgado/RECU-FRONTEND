@@ -13,7 +13,6 @@ import { CrearReparacionComponent } from '../crear-reparacion/crear-reparacion.c
 import { ListarReparacionComponent } from '../listar-reparacion/listar-reparacion.component';
 import { CrearClienteComponent } from '../crear-cliente/crear-cliente.component';
 import { ListarClientesComponent } from '../listar-clientes/listar-clientes.component';
-import { EditVehiculoComponent } from '../edit-vehiculo/edit-vehiculo.component';
 import { EditReparacionComponent } from '../edit-reparacion/edit-reparacion.component';
 import { ListarVehiculosComponent } from '../listar-vehiculos/listar-vehiculos.component';
 import { CrearEmpleadosComponent } from '../crear-empleados/crear-empleados.component';
@@ -23,6 +22,7 @@ import { GraficosInicioComponent } from '../graficos-inicio/graficos-inicio.comp
 import { GraficoMvsPComponent } from '../grafico-mvs-p/grafico-mvs-p.component';
 import { ListarVehiculosClienteComponent } from 'src/app/listar-vehiculos-cliente/listar-vehiculos-cliente.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListarReparacionesVehiculoComponent } from '../listar-reparaciones-vehiculo/listar-reparaciones-vehiculo.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ListarReparacionComponent,
     CrearClienteComponent,
     ListarClientesComponent,
-    EditVehiculoComponent,
     EditReparacionComponent,
     ListarVehiculosComponent,
     CrearEmpleadosComponent,
@@ -43,6 +42,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GraficosInicioComponent,
     GraficoMvsPComponent,
     ListarVehiculosClienteComponent,
+    ListarReparacionesVehiculoComponent
    
     
   ],

@@ -6,20 +6,29 @@
                 <div class="card-body text-center">
                     <span class="titulo">{{ titulo | uppercase}}</span>
                     <form class="mt-3" [formGroup]="clienteForm" (ngSubmit)="crearCliente()">
-                        <div class="mb-3">
+                        <div class="cuidado" *ngIf="clienteForm.get('dni')?.hasError('required') && clienteForm.get('dni')?.touched">
+                            <span><strong style="color: #FCBE11;">DNI</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                        <div class="mb-3 form-floating">
                             <input type="text" formControlName="dni"
-                             class="form-control" placeholder="DNI">
+                             class="form-control" >
+                             <label for="floatingInputInvalid">DNI CLIENTE</label>
                         </div>
-                        <div class="mb-3">
+                        <div class="cuidado" *ngIf="clienteForm.get('nombre')?.hasError('required') && clienteForm.get('nombre')?.touched">
+                            <span><strong style="color: #FCBE11;">NOMBRE</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                        <div class="mb-3 form-floating">
                             <input type="text" formControlName="nombre"
-                             class="form-control" placeholder="Nombre">
+                             class="form-control" >
+                             <label for="floatingInputInvalid">NOMBRE CLIENTE</label>
                         </div>
-                        <div class="cuidado" *ngIf="clienteForm.get('tVehiculo')?.hasError('required') && clienteForm.get('tVehiculo')?.touched">
-                            <span><strong style="color: #FCBE11;">TIPO VEHICULO</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        <div class="cuidado" *ngIf="clienteForm.get('nombre')?.hasError('required') && clienteForm.get('nombre')?.touched">
+                            <span><strong style="color: #FCBE11;">TELEFONO</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 form-floating">
                             <input type="number" formControlName="telefono"
-                             class="form-control" placeholder="Telefono">
+                             class="form-control" >
+                             <label for="floatingInputInvalid">TELEFONO CLIENTE</label>
                         </div>
                         <div class="mt-3">
                             <button routerLink="/ver-clientes" class="btn btn-secondary btn-lg float-start">VOLVER</button>

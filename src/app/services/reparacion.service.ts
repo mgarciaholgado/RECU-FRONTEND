@@ -16,6 +16,10 @@ export class ReparacionService {
     return this.http.get(this.url + '/verReparacion')
   }
 
+  getReparacionesVehiculo(matricula:string): Observable<any>{
+    return this.http.get(this.url + '/look2/' + matricula)
+  }
+
   eliminarReparaciones(codReparacion: string): Observable<any>{
     return this.http.delete(this.url + '/deleteReparacion/' + codReparacion);
   }

@@ -13,7 +13,7 @@
                             <th scope="col">Marca</th>
                             <th scope="col">Modelo</th>
                             <th scope="col">Color</th>
-                            <th scope="col">Precio</th>
+                            <th scope="col">Valor del vehiculo</th>
                             <th scope="col">Tipo de Vehiculo</th>
                             <th></th>
                           </tr>
@@ -28,7 +28,6 @@
                             <td scope="row">{{vehiculos._precio | currency: "EUR"}}</td>
                             <td scope="row">{{vehiculos._tipoVehiculo}}</td>
                             <td>
-                                <i [routerLink]="['/editar-vehiculo' , vehiculos._matricula]" class="fas fa-pen-to-square"></i>
                                 <i (click)="eliminarVehiculo(vehiculos._matricula)" class="fas fa-trash-can text-danger"></i>
                             </td>
                           </tr>

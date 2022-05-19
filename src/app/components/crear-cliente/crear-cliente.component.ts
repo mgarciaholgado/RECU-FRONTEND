@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { tCliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
 
@@ -17,7 +18,8 @@ export class CrearClienteComponent implements OnInit {
     private fb: FormBuilder,
     private router:Router,
     private clienteService:ClienteService,
-    private aRouter: ActivatedRoute
+    private aRouter: ActivatedRoute,
+    private toastr: ToastrService
   ) {
     this.clienteForm = this.fb.group({
       dni: ['', Validators.required],
@@ -43,12 +45,14 @@ export class CrearClienteComponent implements OnInit {
       this.clienteService
         .editarCliente(this.dni, CLIENTE)
         .subscribe((data) => {
+          this.toastr.success('Cliente editado con exito !!');
           this.router.navigate(['/ver-clientes']);
         });
     } else {
       this.clienteService
         .crearCliente(CLIENTE)
         .subscribe((data) => {
+          this.toastr.success('Cliente creado con exito !!');
           this.router.navigate(['/ver-clientes']);
         });
     }

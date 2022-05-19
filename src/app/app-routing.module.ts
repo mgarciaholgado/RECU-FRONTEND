@@ -4,14 +4,15 @@ import { CrearClienteComponent } from './components/crear-cliente/crear-cliente.
 import { CrearEmpleadosComponent } from './components/crear-empleados/crear-empleados.component';
 import { CrearReparacionComponent } from './components/crear-reparacion/crear-reparacion.component';
 import { CrearVehiculosComponent } from './components/crear-vehiculos/crear-vehiculos.component';
+
 import { EditReparacionComponent } from './components/edit-reparacion/edit-reparacion.component';
-import { EditVehiculoComponent } from './components/edit-vehiculo/edit-vehiculo.component';
 import { GraficoEmpleadosComponent } from './components/grafico-empleados/grafico-empleados.component';
 import { GraficoMvsPComponent } from './components/grafico-mvs-p/grafico-mvs-p.component';
 import { GraficosInicioComponent } from './components/graficos-inicio/graficos-inicio.component';
 import { ListarClientesComponent } from './components/listar-clientes/listar-clientes.component';
 import { ListarEmpleadosComponent } from './components/listar-empleados/listar-empleados.component';
 import { ListarReparacionComponent } from './components/listar-reparacion/listar-reparacion.component';
+import { ListarReparacionesVehiculoComponent } from './components/listar-reparaciones-vehiculo/listar-reparaciones-vehiculo.component';
 import { ListarVehiculosComponent } from './components/listar-vehiculos/listar-vehiculos.component';
 import { ListarVehiculosClienteComponent } from './listar-vehiculos-cliente/listar-vehiculos-cliente.component';
 
@@ -30,8 +31,8 @@ const routes: Routes = [
   { path: 'grafico-2', component: GraficoMvsPComponent },
   { path: 'dashboard', loadChildren:()=> import('./components/dashboard/dashboard.module').then(x=>x.DashboardModule)},
   { path: 'editar-reparacion/:codigo', component: EditReparacionComponent },
-  { path: 'editar-vehiculo/:matricula', component: EditVehiculoComponent },
   { path: 'editar-cliente/:dni', component:  CrearClienteComponent },
+  { path: 'ver-reparaciones-vehiculo/:matricula', component:  ListarReparacionesVehiculoComponent },
   { path: 'ver-vehiculos-cliente/:dni', component:  ListarVehiculosClienteComponent },
   { path: '**', redirectTo: 'login', pathMatch:'full'}
 ];

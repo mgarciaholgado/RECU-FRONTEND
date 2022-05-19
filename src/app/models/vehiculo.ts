@@ -48,14 +48,40 @@ export  class Vehiculos {
   }
 }
 export type tVehiculo = {
-  DNIpropietario:string;
-  matricula: string;
-  marca: string;
-  modelo: string;
-  color: string;
-  precio: number;
-  tipoVehiculo: string;
+ _DNIpropietario:string;
+  _matricula: string;
+  _marca: string;
+  _modelo: string;
+  _color: string;
+  _precio: number;
+  _tipoVehiculo: string;
+  _traccion:string;
+  _potencia:number;
 };
+export type tDeportivo = {
+    DNIpropietario:string;
+     matricula: string;
+     marca: string;
+     modelo: string;
+     color: string;
+     precio: number;
+     tipoVehiculo: string;
+     potencia:number;
+   };
+
+   export type tTodoterreno = {
+    DNIpropietario:string;
+     matricula: string;
+     marca: string;
+     modelo: string;
+     color: string;
+     precio: number;
+     tipoVehiculo: string;
+     traccion:string;
+     
+   };
+
+
 
 export class VehiculosT {
   public _matricula: string | null;

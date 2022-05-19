@@ -16,11 +16,14 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared/shared.module';
 import { ListarVehiculosClienteComponent } from './listar-vehiculos-cliente/listar-vehiculos-cliente.component';
+import { ListarReparacionesVehiculoComponent } from './components/listar-reparaciones-vehiculo/listar-reparaciones-vehiculo.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    
     
   ],
   imports: [

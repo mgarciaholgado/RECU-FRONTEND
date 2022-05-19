@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Reparaciones, tReparaciones } from 'src/app/models/reparacion';
 import { ReparacionService } from 'src/app/services/reparacion.service';
 import { VehiculoService } from 'src/app/services/vehiculos.service';
@@ -20,7 +21,8 @@ export class CrearReparacionComponent implements OnInit {
     private router: Router,
     private _reparacionesService: ReparacionService,
     private vehiculoService:VehiculoService,
-    private aRouter: ActivatedRoute
+    private aRouter: ActivatedRoute,
+    private toastr: ToastrService
   ) 
   {
    this.vehiculoService.getVehiculos().subscribe((matriculas)=>{
@@ -56,6 +58,7 @@ export class CrearReparacionComponent implements OnInit {
       this._reparacionesService
         .crearReparaciones(REPARACION)
         .subscribe((data) => {
+          this.toastr.success('Reparacion creada con exito !!');
           this.router.navigate(['/ver-reparaciones']);
         });
     }

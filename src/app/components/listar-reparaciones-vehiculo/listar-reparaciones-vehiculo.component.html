@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span *ngFor="let reparacion of listarReparacionesVehiculo" class="titulo">LISTADO DE REPARACIONES DE <strong>{{reparacion._matricula}}</strong></span>
+                    <table class="table mt-3" >
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">COD</th>
+                                <th scope="col">Matricula</th>
+                                <th scope="col">Nombre Reparacion</th>
+                                <th scope="col">PVP</th>
+                                
+                              </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let reparacion of listarReparacionesVehiculo">
+                            <th scope="row">{{reparacion._codReparacion}}</th>
+                            <td scope="row">{{reparacion._matricula}}</td>
+                            <th style="font-weight: normal;">{{reparacion._nombreReparacion}}</th>
+                            <td scope="col">{{reparacion._CosteBase}}</td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="trans">
+                         <button routerLink="/ver-clientes" class="btn btn-warning">
+                          VOLVER A CLIENTES
+                        </button>
+                      </div>
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

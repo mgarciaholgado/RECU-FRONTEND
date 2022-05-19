@@ -6,27 +6,42 @@
                 <div class="card-body text-center">
                     <span class="titulo">{{ titulo | uppercase}}</span>
                     <form class="mt-3" [formGroup]="reparacionForm" (ngSubmit)="crearReparacion()">
-                        <div class="mb-3">
+                        <div class="cuidado" *ngIf="reparacionForm.get('codigo')?.hasError('required') && reparacionForm.get('codigo')?.touched">
+                            <span><strong style="color: #FCBE11;">CODIGO</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                        <div class="mb-3 form-floating">
                             <input type="number" formControlName="codigo"
-                             class="form-control" placeholder="Codigo Reparacion">
+                             class="form-control" >
+                             <label for="floatingSelect1">CODIGO REPARACION</label>
+                        </div>
+                        <div class="cuidado" *ngIf="reparacionForm.get('matricula')?.hasError('required') && reparacionForm.get('matricula')?.touched">
+                            <span><strong style="color: #FCBE11;">VEHICULO</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
                         </div>
                         <div class="form-floating mb-3">
                             <select formControlName="matricula" class="form-select" id="floatingSelect1">
-                                <option *ngFor="let matricula of matriculas" [ngValue]="matricula._matricula">{{matricula._matricula}} - {{matricula._marca}}</option>
+                                <option *ngFor="let matricula of matriculas" [ngValue]="matricula._matricula">{{matricula._matricula}} - {{matricula._marca}} - {{matricula._modelo}}</option>
                             </select>
-                            <label for="floatingSelect1">Escoge un Vehiculo</label>
+                            <label for="floatingSelect1">ESCOGE UN VEHICULO</label>
                         </div>
-                        <div class="mb-3">
+                        <div class="cuidado" *ngIf="reparacionForm.get('nombre')?.hasError('required') && reparacionForm.get('nombre')?.touched">
+                            <span><strong style="color: #FCBE11;">NOMBRE</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                        <div class="mb-3 form-floating">
                             <input type="text" formControlName="nombre"
-                             class="form-control" placeholder="Nombre Reparacion">
+                             class="form-control" >
+                             <label for="floatingSelect1">NOMBRE DE REPARACION</label>
                         </div>
-                        <div class="mb-3">
+                        <div class="cuidado" *ngIf="reparacionForm.get('coste')?.hasError('required') && reparacionForm.get('coste')?.touched">
+                            <span><strong style="color: #FCBE11;">COSTE</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                        <div class="mb-3 form-floating">
                             <input type="number" formControlName="coste"
-                             class="form-control" placeholder="Coste">
+                             class="form-control" >
+                             <label for="floatingSelect1">COSTE DE REPARACION</label>
                         </div>
                         <div class="mt-3">
                             <button routerLink="/ver-reparaciones" class="btn btn-secondary btn-lg float-start">VOLVER</button>
-                            <button type="submit" class="btn btn-success btn-lg float-end">ENVIAR</button>
+                            <button type="submit"  [disabled]="reparacionForm.invalid" class="btn btn-success btn-lg float-end">ENVIAR</button>
                             
                         </div>
                     </form>

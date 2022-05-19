@@ -2,6 +2,7 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { tMecanico, tPintor } from 'src/app/models/empleados';
 import { EmpleadosService } from 'src/app/services/empleados.service';
 
@@ -19,7 +20,8 @@ export class CrearEmpleadosComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private empleadoService: EmpleadosService,
-    private aRouter: ActivatedRoute
+    private aRouter: ActivatedRoute,
+    private toastr: ToastrService
   ) {
     this.empleadoForm = this.fb.group({
       dni: ['', Validators.required],
@@ -37,7 +39,7 @@ export class CrearEmpleadosComponent implements OnInit {
   }
 
   crearEmpleado() {
-    if (this.empleadoForm.value.tipoEmpleado == 'mecanico') {
+    if (this.empleadoForm.value.tVehiculo == 'mecanico') {
       const MECANICO: tMecanico = {
         dni: this.empleadoForm.get('dni')?.value,
         nombre: this.empleadoForm.get('nombre')?.value,
@@ -48,6 +50,7 @@ export class CrearEmpleadosComponent implements OnInit {
       };
       this.empleadoService.crearMecanico(MECANICO).subscribe((data) => {
         console.log(data)
+        this.toastr.success('Mecanico creado con exito !!');
         this.router.navigate(['/ver-empleados']);
       });
     }else{
@@ -62,6 +65,7 @@ export class CrearEmpleadosComponent implements OnInit {
       };
 
       this.empleadoService.crearPintor(PINTOR).subscribe((data) => {
+        this.toastr.success('Pintor creado con exito !!');
         this.router.navigate(['/ver-empleados']);
       });
     }

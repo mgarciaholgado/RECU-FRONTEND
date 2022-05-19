@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container mt-5">
     <div class="row">
-        <div class="col-lg-6 offset-lg-3">
+        <div class="col-lg-9 offset-lg-1">
             <div class="card">
                 <div class="card-body text-center">
                     <span class="titulo">LISTADO DE VEHICULOS DEL CLIENTE</span>
@@ -10,18 +10,24 @@
                           <tr>
                             <th scope="col">Matricula</th>
                             <th scope="col">Marca</th>
+                            <th scope="col">Modelo</th>
                             <th scope="col">Color</th>
+                            <th scope="col">Precio</th>
                             <th scope="col">Tipo de Vehiculo</th>
-                            
+                            <th></th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr *ngFor="let vehiculo of listarVehiculosClientes">
                             <th scope="row">{{vehiculo._matricula}}</th>
                             <td scope="row">{{vehiculo._marca}}</td>
-                            <td scope="row">{{vehiculo._color}}</td>
-                            <td scope="row">{{vehiculo._tipoVehiculo}}</td>
-                            
+                            <th style="font-weight: normal;">{{vehiculo._modelo}}</th>
+                            <td scope="col">{{vehiculo._color}}</td>
+                            <th style="font-weight: normal;">{{vehiculo._precio | currency: "EUR"}}</th>
+                            <td style="font-weight: normal;">{{vehiculo._tipoVehiculo}}</td>
+                            <td>
+                              <i [routerLink]="['/ver-reparaciones-vehiculo', vehiculo._matricula]" class=" fas fa-duotone fa-wrench"></i>
+                            </td>
                           </tr>
                         </tbody>
                       </table>
