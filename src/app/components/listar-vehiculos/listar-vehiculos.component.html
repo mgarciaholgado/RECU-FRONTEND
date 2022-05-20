@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container mt-5">
     <div class="row">
-        <div class="col-lg-9 offset-lg-2">
+        <div class="col-lg-10 offset-lg-1">
             <div class="card">
                 <div class="card-body text-center">
                     <span class="titulo">LISTADO DE VEHICULOS</span>
@@ -15,6 +15,8 @@
                             <th scope="col">Color</th>
                             <th scope="col">Valor del vehiculo</th>
                             <th scope="col">Tipo de Vehiculo</th>
+                            <th scope="col">Traccion</th>
+                            <th scope="col">Potencia en CV</th>
                             <th></th>
                           </tr>
                         </thead>
@@ -27,6 +29,8 @@
                             <td scope="row">{{vehiculos._color}}</td>
                             <td scope="row">{{vehiculos._precio | currency: "EUR"}}</td>
                             <td scope="row">{{vehiculos._tipoVehiculo}}</td>
+                            <td scope="row">{{vehiculos._traccion}}</td>
+                            <td scope="row">{{vehiculos._potencia }}</td>
                             <td>
                                 <i (click)="eliminarVehiculo(vehiculos._matricula)" class="fas fa-trash-can text-danger"></i>
                             </td>
