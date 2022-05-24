@@ -19,10 +19,11 @@ import { CrearEmpleadosComponent } from '../crear-empleados/crear-empleados.comp
 import { ListarEmpleadosComponent } from '../listar-empleados/listar-empleados.component';
 import { GraficoEmpleadosComponent } from '../grafico-empleados/grafico-empleados.component';
 import { GraficosInicioComponent } from '../graficos-inicio/graficos-inicio.component';
-import { GraficoMvsPComponent } from '../grafico-mvs-p/grafico-mvs-p.component';
+
 import { ListarVehiculosClienteComponent } from 'src/app/listar-vehiculos-cliente/listar-vehiculos-cliente.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListarReparacionesVehiculoComponent } from '../listar-reparaciones-vehiculo/listar-reparaciones-vehiculo.component';
+import { GraficoVehiculosComponent } from '../grafico-vehiculos/grafico-vehiculos.component';
 
 @NgModule({
   declarations: [
@@ -40,9 +41,10 @@ import { ListarReparacionesVehiculoComponent } from '../listar-reparaciones-vehi
     NavbarComponent,
     GraficoEmpleadosComponent,
     GraficosInicioComponent,
-    GraficoMvsPComponent,
     ListarVehiculosClienteComponent,
-    ListarReparacionesVehiculoComponent
+    ListarReparacionesVehiculoComponent,
+    GraficoVehiculosComponent,
+    GraficosInicioComponent,
    
     
   ],

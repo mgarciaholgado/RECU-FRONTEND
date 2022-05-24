@@ -7,11 +7,15 @@ import { tDeportivo, tTodoterreno, tVehiculo } from '../models/vehiculo';
   providedIn: 'root'
 })
 export class VehiculoService {
-  url = 'https://recu-backend.herokuapp.com';
+  url = 'http://localhost:3000';
   constructor(private http: HttpClient) { }
 
   getVehiculos(): Observable<any>{
     return this.http.get(this.url + '/verVehiculos')
+  }
+
+  getVehiculosValor(): Observable<any>{
+    return this.http.get(this.url + '/valor');
   }
 
   eliminarVehiculo(matricula: string): Observable<any>{

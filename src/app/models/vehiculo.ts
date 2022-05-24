@@ -58,6 +58,9 @@ export type tVehiculo = {
   _traccion:string;
   _potencia:number;
 };
+
+
+
 export type tDeportivo = {
     DNIpropietario:string;
      matricula: string;
@@ -81,21 +84,32 @@ export type tDeportivo = {
      
    };
 
+   export type tValor2 = {
+    _matricula: string | null;
+  _tipoVehiculo: string | null;
+  _modelo: string | null;
+  _valor: number | null;
+     
+   };
 
 
-export class VehiculosT {
+
+export class tValor {
   public _matricula: string | null;
-  public _marca: string | null;
-  public _color: string | null;
   public _tipoVehiculo: string | null;
+  public _modelo: string | null;
+  public _valor: number | null;
+ 
+  
 
-  public constructor(matricula: string,
-    marca: string,
-    color: string,
-    tipoVehiculo: string){
+  public constructor(matricula: string | null,
+    tipoVehiculo: string | null,
+    modelo: string | null,
+    valor: number | null){
       this._matricula = matricula;
-      this._marca = marca;
-      this._color = color;
       this._tipoVehiculo = tipoVehiculo;
+      this._modelo = modelo;
+      this._valor = valor;
+      
   }
 }

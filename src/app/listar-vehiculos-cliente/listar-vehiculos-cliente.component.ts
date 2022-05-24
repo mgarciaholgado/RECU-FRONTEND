@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Clientes } from '../models/cliente';
-import { tVehiculo, Vehiculos, VehiculosT } from '../models/vehiculo';
+import { tVehiculo, Vehiculos } from '../models/vehiculo';
 import { ClienteService } from '../services/cliente.service';
 
 @Component({
