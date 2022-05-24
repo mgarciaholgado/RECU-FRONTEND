@@ -7,7 +7,7 @@ import { tDeportivo, tTodoterreno, tVehiculo } from '../models/vehiculo';
   providedIn: 'root'
 })
 export class VehiculoService {
-  url = 'http://localhost:3000';
+  url = 'https://recu-backend.herokuapp.com';
   constructor(private http: HttpClient) { }
 
   getVehiculos(): Observable<any>{

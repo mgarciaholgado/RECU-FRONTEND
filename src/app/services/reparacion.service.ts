@@ -9,7 +9,7 @@ import { tVehiculo } from '../models/vehiculo';
 })
 
 export class ReparacionService {
-  url = 'http://localhost:3000';
+  url = 'https://recu-backend.herokuapp.com';
   constructor(private http: HttpClient) { }
 
   getReparaciones(): Observable<any>{
