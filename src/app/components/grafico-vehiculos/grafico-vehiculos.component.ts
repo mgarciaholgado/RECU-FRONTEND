@@ -24,7 +24,7 @@ export class GraficoVehiculosComponent implements OnInit {
       type: 'pie'
   },
   title: {
-      text: 'Browser market shares in January, 2018'
+      text: 'Coches con mas valor del taller'
   },
   tooltip: {
       pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -45,16 +45,9 @@ export class GraficoVehiculosComponent implements OnInit {
       }
   },
   series: [{
-      name: 'Brands',
+      name: 'Valor',
       colorByPoint: true,
-      data: [
-      {
-          name: 'Internet Explorer',
-          y: 11.84
-      }, {
-          name: 'Firefox',
-          y: 10.85
-      },]
+      data: []
   }]
   }
   
@@ -76,18 +69,28 @@ export class GraficoVehiculosComponent implements OnInit {
                 this.arrayVehiculosTodoTerreno.push(this.vehiculo);
             } 
         }
-        console.log(this.arrayVehiculosDeportivos)
-        console.log(this.arrayVehiculosTodoTerreno)
+        let length = this.arrayVehiculosDeportivos.length;
+        let length2 = this.arrayVehiculosTodoTerreno.length;
+        console.log(length)
         
+         
+            this.chartOptions.series[0]["data"].push({
+                 name: 'Deportivos',
+                 y: length
+             })
+
+             this.chartOptions.series[0]["data"].push({
+                name: 'TodoTerrenos',
+                y: length2
+            })
+
+             Highcharts.chart("vehiculos",this.chartOptions)
+         
+
+         
+
     })
-    
       
-
-
-      Highcharts.chart("vehiculos",this.chartOptions)
-      
-      
-
     }
 
 }
