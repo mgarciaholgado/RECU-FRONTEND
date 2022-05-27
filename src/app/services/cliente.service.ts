@@ -8,7 +8,7 @@ import { tCliente } from '../models/cliente';
 })
 export class ClienteService {
 
-  url = 'https://recu-backend.herokuapp.com';
+  url = 'http://localhost:3000';
   constructor(private http: HttpClient) { }
 
   getClientes(): Observable<any>{

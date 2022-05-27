@@ -13,7 +13,7 @@ export class GraficoVehiculosComponent implements OnInit {
     arrayVehiculosTodoTerreno: tValor[] = [];
     vehiculo!: tValor2 ;
     sum!: number
-    tmpVehiculo: tValor = new tValor("", "", "",  0);
+    tmpVehiculo: tValor = new tValor("", "", "","", 0);
     Highcharts: typeof Highcharts = Highcharts;
 
   chartOptions: any = {
@@ -69,20 +69,22 @@ export class GraficoVehiculosComponent implements OnInit {
                 this.arrayVehiculosTodoTerreno.push(this.vehiculo);
             } 
         }
-        let length = this.arrayVehiculosDeportivos.length;
-        let length2 = this.arrayVehiculosTodoTerreno.length;
-        console.log(length)
+        
+        this.arrayVehiculosDeportivos.forEach((deportivo) => {
+            this.chartOptions.series[0]["data"].push({
+                name: `Matricula: ${deportivo._matricula}, Vehiculo: ${deportivo._marca} ${deportivo._modelo}`,
+                y: deportivo._valor,
+            })
+    })
         
          
+            
+    this.arrayVehiculosTodoTerreno.forEach((todoterreno) => {
             this.chartOptions.series[0]["data"].push({
-                 name: 'Deportivos',
-                 y: length
-             })
-
-             this.chartOptions.series[0]["data"].push({
-                name: 'TodoTerrenos',
-                y: length2
+                name: `Matricula: ${todoterreno._matricula}, Vehiculo: ${todoterreno._marca} ${todoterreno._modelo}`,
+                y: todoterreno._valor
             })
+    })
 
              Highcharts.chart("vehiculos",this.chartOptions)
          
