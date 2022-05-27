@@ -33,7 +33,10 @@
                             <td scope="row">{{vehiculos._potencia }}</td>
                             <td>
                                 <i (click)="eliminarVehiculo(vehiculos._matricula)" class="fas fa-trash-can text-danger"></i>
-                            </td>
+                                <i *ngIf="vehiculos._tipoVehiculo == 'Todoterreno'" [routerLink]="['/editar-todoterreno', vehiculos._matricula]" class="fas fa-pen-to-square"></i>
+                                <i *ngIf="vehiculos._tipoVehiculo == 'Deportivo'" [routerLink]="['/editar-deportivo', vehiculos._matricula]" class="fas fa-pen-to-square"></i>
+                                
+                              </td>
                           </tr>
                         </tbody>
                       </table>

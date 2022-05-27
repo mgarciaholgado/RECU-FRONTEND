@@ -24,6 +24,8 @@ import { ListarVehiculosClienteComponent } from 'src/app/listar-vehiculos-client
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListarReparacionesVehiculoComponent } from '../listar-reparaciones-vehiculo/listar-reparaciones-vehiculo.component';
 import { GraficoVehiculosComponent } from '../grafico-vehiculos/grafico-vehiculos.component';
+import { EditDeportivoComponent } from '../edit-deportivo/edit-deportivo.component';
+import { EditTodoterrenoComponent } from '../edit-todoterreno/edit-todoterreno.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { GraficoVehiculosComponent } from '../grafico-vehiculos/grafico-vehiculo
     ListarReparacionesVehiculoComponent,
     GraficoVehiculosComponent,
     GraficosInicioComponent,
+    EditDeportivoComponent,
+    EditTodoterrenoComponent
    
     
   ],

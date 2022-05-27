@@ -15,6 +15,8 @@ import { ToastrModule } from 'ngx-toastr';
 // COMPONENTES
 import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared/shared.module';
+import { EditDeportivoComponent } from './components/edit-deportivo/edit-deportivo.component';
+import { EditTodoterrenoComponent } from './components/edit-todoterreno/edit-todoterreno.component';
 
 
 
@@ -22,6 +24,7 @@ import { SharedModule } from './components/shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
+    
     
     
     
