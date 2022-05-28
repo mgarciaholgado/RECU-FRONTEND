@@ -53,7 +53,7 @@ export class EditMecanicoComponent implements OnInit {
         .editarMecanico(this.dni, MECANICO)
         .subscribe((data) => {
           this.toastr.success('Mecanico editado con exito !!');
-          this.router.navigate(['/ver-vehiculos']);
+          this.router.navigate(['/ver-empleados']);
         });
     }
   }
@@ -64,17 +64,17 @@ export class EditMecanicoComponent implements OnInit {
         .getEmpleado(this.dni)
         .subscribe((data) => {
           console.log(data)
-          data.forEach((deportivo:any) => {
-            console.log(deportivo)
+          
+            
             this.editMecanicoForm.setValue({
-              dni: deportivo._dni,
-              nombre: deportivo._nombre,
-              tipoEmpleado: deportivo._tipoEmpleado,
-              fechaContratacion: deportivo._fechaContratacion,
-              sueldoMes: deportivo._sueldoMes,
-              horasExtra: deportivo._horasExtra,
+              dni: data._dni,
+              nombre: data._nombre,
+              tipoEmpleado: data._tipoEmpleado,
+              fechaContratacion: data._fechaContratacion,
+              sueldoMes: data._sueldoMes,
+              horasExtra: data._horasExtra,
             });
-    })
+   
         });
     }
   }
