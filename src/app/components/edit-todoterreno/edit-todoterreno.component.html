@@ -1,1 +1,86 @@
 <app-navbar></app-navbar>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">{{ titulo | uppercase}}</span>
+                    <form class="mt-3" [formGroup]="editTodoterrenoForm" (ngSubmit)="crearTodoterreno()">
+                        <div class="cuidado" *ngIf="editTodoterrenoForm.get('DNIpropietario')?.hasError('required') && editTodoterrenoForm.get('DNIpropietario')?.touched">
+                            <span><strong style="color: #FCBE11;">DNI PROPIETARIO</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input type="text"  formControlName="DNIpropietario"
+                             class="form-control" id="floatingInputInvalid"> 
+                             <label for="floatingInputInvalid">MATRICULA VEHICULO</label>
+                        </div>
+                        <div class="cuidado" *ngIf="editTodoterrenoForm.get('matricula')?.hasError('required') && editTodoterrenoForm.get('matricula')?.touched">
+                            <span><strong style="color: #FCBE11;">MATRICULA</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input type="text"  formControlName="matricula"
+                             class="form-control" id="floatingInputInvalid"> 
+                             <label for="floatingInputInvalid">MATRICULA VEHICULO</label>
+                        </div>
+                        <div class="cuidado" *ngIf="editTodoterrenoForm.get('marca')?.hasError('required') && editTodoterrenoForm.get('marca')?.touched">
+                            <span><strong style="color: #FCBE11;">MARCA</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                         <div class="mb-3 form-floating">
+                            <input type="text" formControlName="marca"
+                             class="form-control">
+                             <label for="floatingInputInvalid">MARCA VEHICULO</label>
+                        </div>
+                        <div class="cuidado" *ngIf="editTodoterrenoForm.get('modelo')?.hasError('required') && editTodoterrenoForm.get('modelo')?.touched">
+                            <span><strong style="color: #FCBE11;">MODELO</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input type="text" formControlName="modelo"
+                             class="form-control" id="floatingInputInvalid">
+                             <label for="floatingInputInvalid">MODELO VEHICULO</label>
+                        </div>
+                        <div class="cuidado" *ngIf="editTodoterrenoForm.get('color')?.hasError('required') && editTodoterrenoForm.get('color')?.touched">
+                            <span><strong style="color: #FCBE11;">COLOR</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            
+                            <input type="text" formControlName="color"
+                             class="form-control" id="floatingInputInvalid">
+                             <label for="floatingInputInvalid">COLOR VEHICULO</label>
+                        </div>
+                        <div class="cuidado" *ngIf="editTodoterrenoForm.get('precio')?.hasError('required') && editTodoterrenoForm.get('precio')?.touched">
+                            <span><strong style="color: #FCBE11;">PRECIO</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input type="number" formControlName="precio"
+                             class="form-control" id="floatingInputInvalid">
+                             <label for="floatingInputInvalid">VALOR VEHICULO</label>
+                        </div>
+                        <div class="cuidado" *ngIf="editTodoterrenoForm.get('tVehiculo')?.hasError('required') && editTodoterrenoForm.get('tVehiculo')?.touched">
+                            <span><strong style="color: #FCBE11;">TIPO VEHICULO</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input type="text" formControlName="tVehiculo"
+                             class="form-control" id="floatingInputInvalid">
+                             <label for="floatingInputInvalid">VALOR VEHICULO</label>
+                        </div>
+
+                        <div class="cuidado" *ngIf="editTodoterrenoForm.get('traccion')?.hasError('required') && editTodoterrenoForm.get('traccion')?.touched">
+                            <span><strong style="color: #FCBE11;">TRACCION</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select formControlName="traccion" class="form-select" id="floatingSelect2">
+                                <option value="4x4">4x4</option>
+                                <option value="AWD">AWD</option> 
+                            </select>
+                            <label for="floatingSelect2">TRACCION VEHICULO</label>
+                        </div>                        
+                        <div class="mt-3">
+                            <button routerLink="/ver-vehiculos" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+                            <button type="submit" class="btn btn-success btn-lg float-end">ENVIAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -26,6 +26,8 @@ import { ListarReparacionesVehiculoComponent } from '../listar-reparaciones-vehi
 import { GraficoVehiculosComponent } from '../grafico-vehiculos/grafico-vehiculos.component';
 import { EditDeportivoComponent } from '../edit-deportivo/edit-deportivo.component';
 import { EditTodoterrenoComponent } from '../edit-todoterreno/edit-todoterreno.component';
+import { EditMecanicoComponent } from '../edit-mecanico/edit-mecanico.component';
+import { EditPintorComponent } from '../edit-pintor/edit-pintor.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { EditTodoterrenoComponent } from '../edit-todoterreno/edit-todoterreno.c
     GraficoVehiculosComponent,
     GraficosInicioComponent,
     EditDeportivoComponent,
-    EditTodoterrenoComponent
+    EditTodoterrenoComponent,
+    EditMecanicoComponent,
+    EditPintorComponent,
    
     
   ],

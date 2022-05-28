@@ -25,6 +25,8 @@
                 <td>{{ empleados._sueldoMes | currency: "EUR"  }}</td>
         
                 <td>
+                  <i *ngIf="empleados._tipoEmpleado == 'mecanico'" [routerLink]="['/editar-mecanico', empleados._dni]" class="fas fa-pen-to-square"></i>
+                  <i *ngIf="empleados._tipoEmpleado == 'pintor'" [routerLink]="['/editar-pintor', empleados._dni]" class="fas fa-pen-to-square"></i>
                   <i (click)="eliminarEmpleado(empleados._dni)" class="fas fa-trash-can text-danger"></i>
                   
                 </td>

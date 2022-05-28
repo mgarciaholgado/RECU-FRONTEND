@@ -18,6 +18,10 @@ export class VehiculoService {
     return this.http.get(this.url + '/valor');
   }
 
+  getVehiculo(matricula: string): Observable<any>{
+    return this.http.get(this.url + '/verVehiculo/' + matricula);
+  }
+
   eliminarVehiculo(matricula: string): Observable<any>{
     return this.http.delete(this.url + '/deleteVehiculo/' + matricula);
   }
@@ -34,8 +38,12 @@ export class VehiculoService {
     return this.http.get(this.url + '/verVehiculo/' + matricula)
   }
 
-  editarVehiculo(matricula: string, vehiculo: tVehiculo):Observable<any>{
-    return this.http.put(this.url + '/updateVehiculo/' + matricula, vehiculo);
+  editarDeportivo(matricula: string, vehiculo: tDeportivo):Observable<any>{
+    return this.http.put(this.url + '/updateDeportivo/' + matricula, vehiculo);
+  }
+
+  editarTodoterreno(matricula: string, vehiculo: tTodoterreno):Observable<any>{
+    return this.http.put(this.url + '/updateTodoterreno/' + matricula, vehiculo);
   }
   
 }

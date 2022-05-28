@@ -7,7 +7,7 @@ import { tMecanico, tPintor } from '../models/empleados';
   providedIn: 'root',
 })
 export class EmpleadosService {
-  url = 'https://recu-backend.herokuapp.com';
+  url = 'http://localhost:3000';
   constructor(private http: HttpClient) {}
 
   getEmpleados(): Observable<any> {
@@ -26,6 +26,10 @@ export class EmpleadosService {
     return this.http.get(this.url + '/verPintores');
   }
 
+  getEmpleado(dni: string): Observable<any>{
+    return this.http.get(this.url + '/verEmpleado/' + dni);
+  }
+
   crearMecanico(mecanico: tMecanico): Observable<any> {
     return this.http.post(this.url + '/addEmpleado', mecanico);
   }
@@ -36,5 +40,9 @@ export class EmpleadosService {
 
   eliminarEmpleado(dni: string): Observable<any> {
     return this.http.delete(this.url + '/deleteEmpleado/' + dni);
+  }
+
+  editarMecanico(dni: string, MECANICO: tMecanico):Observable<any>{
+    return this.http.put(this.url + '/updateMecanico/' + dni, MECANICO);
   }
 }

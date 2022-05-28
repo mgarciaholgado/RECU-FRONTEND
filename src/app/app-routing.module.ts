@@ -5,6 +5,8 @@ import { CrearEmpleadosComponent } from './components/crear-empleados/crear-empl
 import { CrearReparacionComponent } from './components/crear-reparacion/crear-reparacion.component';
 import { CrearVehiculosComponent } from './components/crear-vehiculos/crear-vehiculos.component';
 import { EditDeportivoComponent } from './components/edit-deportivo/edit-deportivo.component';
+import { EditMecanicoComponent } from './components/edit-mecanico/edit-mecanico.component';
+import { EditPintorComponent } from './components/edit-pintor/edit-pintor.component';
 
 import { EditReparacionComponent } from './components/edit-reparacion/edit-reparacion.component';
 import { EditTodoterrenoComponent } from './components/edit-todoterreno/edit-todoterreno.component';
@@ -36,6 +38,8 @@ const routes: Routes = [
   { path: 'editar-reparacion/:codigo', component: EditReparacionComponent },
   { path: 'editar-deportivo/:matricula', component: EditDeportivoComponent },
   { path: 'editar-todoterreno/:matricula', component: EditTodoterrenoComponent },
+  { path: 'editar-mecanico/:dni', component: EditMecanicoComponent },
+  { path: 'editar-pintor/:dni', component: EditPintorComponent },
   { path: 'editar-cliente/:dni', component:  CrearClienteComponent },
   { path: 'ver-reparaciones-vehiculo/:matricula', component:  ListarReparacionesVehiculoComponent },
   { path: 'ver-vehiculos-cliente/:dni', component:  ListarVehiculosClienteComponent },
