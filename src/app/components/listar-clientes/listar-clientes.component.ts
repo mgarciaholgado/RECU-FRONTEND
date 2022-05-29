@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Clientes } from 'src/app/models/cliente';
 import { Vehiculos } from 'src/app/models/vehiculo';
 import { ClienteService } from 'src/app/services/cliente.service';
@@ -10,7 +11,8 @@ import { ClienteService } from 'src/app/services/cliente.service';
 })
 export class ListarClientesComponent implements OnInit {
   listarClientes: Clientes[] = [];
-  constructor(private _clienteService: ClienteService) { }
+  constructor(private _clienteService: ClienteService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.obtenerClientes();
@@ -24,6 +26,7 @@ export class ListarClientesComponent implements OnInit {
 
   eliminarCliente(dni:any){
     this._clienteService.eliminarCliente(dni).subscribe(data =>{
+      this.toastr.error('El cliente fue eliminado correctamente' , 'CLIENTE ELIMINADO')
     this.obtenerClientes();
     })
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { tVehiculo, Vehiculos } from 'src/app/models/vehiculo';
 import { VehiculoService } from 'src/app/services/vehiculos.service';
 
@@ -9,7 +10,8 @@ import { VehiculoService } from 'src/app/services/vehiculos.service';
 })
 export class ListarVehiculosComponent implements OnInit {
   listarVehiculos: tVehiculo[] = [];
-  constructor(private _vehiculosService: VehiculoService) {}
+  constructor(private _vehiculosService: VehiculoService,
+    private toastr: ToastrService) {}
 
   ngOnInit(): void {
     this.obtenerVehiculos();
@@ -24,6 +26,7 @@ export class ListarVehiculosComponent implements OnInit {
 
   eliminarVehiculo(matricula: any) {
     this._vehiculosService.eliminarVehiculo(matricula).subscribe((data) => {
+      this.toastr.error('El vehiculo fue eliminado correctamente' , 'VEHICULO ELIMINADO')
       this.obtenerVehiculos();
     });
   }

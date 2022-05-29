@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Clientes } from '../models/cliente';
-import { tVehiculo, Vehiculos } from '../models/vehiculo';
-import { ClienteService } from '../services/cliente.service';
+import { Vehiculos } from 'src/app/models/vehiculo';
+import { ClienteService } from 'src/app/services/cliente.service';
+
+
 
 @Component({
   selector: 'app-listar-vehiculos-cliente',

@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container mt-5">
   <div class="row">
-    <div class="col-lg-7 offset-lg-2">
+    <div class="col-lg-10 offset-lg-1">
       <div class="card">
         <div class="card-body text-center">
           <span class="titulo">LISTADO DE EMPLEADOS</span>
@@ -13,7 +13,9 @@
                 <th scope="col">PUESTO</th>
                 <th scope="col">FECHA INCORPORACION</th>
                 <th scope="col">SUELDO</th>
-                <th scope="col"></th>
+                <th scope="col">HOARAS EXTRA</th>
+                <th scope="col">EMPRESA</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -23,6 +25,8 @@
                 <td>{{ empleados._tipoEmpleado }}</td>
                 <td>{{ empleados._fechaContratacion | date: 'dd/MM/yyyy' }}</td>
                 <td>{{ empleados._sueldoMes | currency: "EUR"  }}</td>
+                <td>{{ empleados._horasExtra}}</td>
+                <td>{{ empleados._empresaContratista}}</td>
         
                 <td>
                   <i *ngIf="empleados._tipoEmpleado == 'mecanico'" [routerLink]="['/editar-mecanico', empleados._dni]" class="fas fa-pen-to-square"></i>

@@ -45,4 +45,8 @@ export class EmpleadosService {
   editarMecanico(dni: string, MECANICO: tMecanico):Observable<any>{
     return this.http.put(this.url + '/updateMecanico/' + dni, MECANICO);
   }
+
+  editarPintor(dni: string, PINTOR: tPintor):Observable<any>{
+    return this.http.put(this.url + '/updatePintor/' + dni, PINTOR);
+  }
 }

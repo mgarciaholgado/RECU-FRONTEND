@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon'
 import { ReparacionService } from 'src/app/services/reparacion.service';
 import { Reparaciones } from 'src/app/models/reparacion';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-listar-reparacion',
@@ -11,7 +12,8 @@ import { Reparaciones } from 'src/app/models/reparacion';
 })
 export class ListarReparacionComponent implements OnInit {
   listarReparaciones: Reparaciones[] = [];
-  constructor(private _reparacionesService: ReparacionService) { 
+  constructor(private _reparacionesService: ReparacionService,
+    private toastr: ToastrService) { 
 
   } 
   ngOnInit(): void {
@@ -25,6 +27,7 @@ export class ListarReparacionComponent implements OnInit {
 
   eliminarReparaciones(codReparacion:any){
     this._reparacionesService.eliminarReparaciones(codReparacion).subscribe(data =>{
+      this.toastr.error('La reparacion fue eliminada correctamente' , 'REPARACION ELIMINADA')
     this.obtenerReparaciones();
     })
   }

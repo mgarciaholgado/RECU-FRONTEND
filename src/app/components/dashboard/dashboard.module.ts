@@ -20,7 +20,7 @@ import { ListarEmpleadosComponent } from '../listar-empleados/listar-empleados.c
 import { GraficoEmpleadosComponent } from '../grafico-empleados/grafico-empleados.component';
 import { GraficosInicioComponent } from '../graficos-inicio/graficos-inicio.component';
 
-import { ListarVehiculosClienteComponent } from 'src/app/listar-vehiculos-cliente/listar-vehiculos-cliente.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListarReparacionesVehiculoComponent } from '../listar-reparaciones-vehiculo/listar-reparaciones-vehiculo.component';
 import { GraficoVehiculosComponent } from '../grafico-vehiculos/grafico-vehiculos.component';
@@ -28,6 +28,7 @@ import { EditDeportivoComponent } from '../edit-deportivo/edit-deportivo.compone
 import { EditTodoterrenoComponent } from '../edit-todoterreno/edit-todoterreno.component';
 import { EditMecanicoComponent } from '../edit-mecanico/edit-mecanico.component';
 import { EditPintorComponent } from '../edit-pintor/edit-pintor.component';
+import { ListarVehiculosClienteComponent } from '../listar-vehiculos-cliente/listar-vehiculos-cliente.component';
 
 @NgModule({
   declarations: [
