@@ -20,7 +20,6 @@ export class ListarVehiculosComponent implements OnInit {
   obtenerVehiculos() {
     this._vehiculosService.getVehiculos().subscribe((data) => {
       this.listarVehiculos = data;
-      console.log(this.listarVehiculos)
     });
   }
 

@@ -20,9 +20,10 @@ import { ListarReparacionComponent } from './components/listar-reparacion/listar
 import { ListarReparacionesVehiculoComponent } from './components/listar-reparaciones-vehiculo/listar-reparaciones-vehiculo.component';
 import { ListarVehiculosClienteComponent } from './components/listar-vehiculos-cliente/listar-vehiculos-cliente.component';
 import { ListarVehiculosComponent } from './components/listar-vehiculos/listar-vehiculos.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'crear-vehiculo', component: CrearVehiculosComponent },
   { path: 'ver-vehiculos', component: ListarVehiculosComponent },
   { path: 'ver-reparaciones', component: ListarReparacionComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'inicio-graficos', component: GraficosInicioComponent },
   { path: 'crear-reparacion', component: CrearReparacionComponent },
   { path: 'grafico-2', component: GraficoVehiculosComponent},
+  { path: 'login', component: LoginComponent },
   { path: 'dashboard', loadChildren:()=> import('./components/dashboard/dashboard.module').then(x=>x.DashboardModule)},
   { path: 'editar-reparacion/:codigo', component: EditReparacionComponent },
   { path: 'editar-deportivo/:matricula', component: EditDeportivoComponent },

@@ -1,0 +1,49 @@
+.body{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.login{
+    margin-top: 30px;
+    width: 100%;
+    max-width: 330px;
+    text-align: center;
+}
+
+.ancho{
+    width: 80%;
+    align-items: center;
+}
+
+.spinner{
+    margin-top: 50px;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 6cm;
+}
+
+.mat-beti {
+    background-color: #fbc404;
+    color: black;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: black !important;
+   }
+
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: green !important;
+  } 
+
+  ::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: #fbc404 !important;;
+   }
+
+   .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #2A79FF!important;
+}
