@@ -60,7 +60,7 @@
                         </div>
                         <div class="mb-3 form-floating">
                             <input type="text" formControlName="tVehiculo"
-                             class="form-control" id="floatingInputInvalid">
+                             class="form-control" id="floatingInputInvalid" readonly>
                              <label for="floatingInputInvalid">TIPO DE VEHICULO</label>
                         </div>
                         <div class="cuidado" *ngIf="editDeportivoForm.get('potencia')?.hasError('required') && editDeportivoForm.get('potencia')?.touched">

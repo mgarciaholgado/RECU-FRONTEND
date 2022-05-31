@@ -11,7 +11,7 @@
                         </div>
                         <div class="mb-3 form-floating">
                             <input type="text" formControlName="tipoEmpleado"
-                             class="form-control ">
+                             class="form-control " readonly>
                              <label for="floatingInputInvalid">TIPO EMPLEADO</label>
                         </div>
                         <div class="cuidado" *ngIf="editMecanicoForm.get('dni')?.hasError('required') && editMecanicoForm.get('dni')?.touched">

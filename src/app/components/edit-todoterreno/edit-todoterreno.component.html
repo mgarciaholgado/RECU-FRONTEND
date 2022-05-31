@@ -12,7 +12,7 @@
                         <div class="mb-3 form-floating">
                             <input type="text"  formControlName="DNIpropietario"
                              class="form-control" id="floatingInputInvalid"> 
-                             <label for="floatingInputInvalid">MATRICULA VEHICULO</label>
+                             <label for="floatingInputInvalid">DNI PROPIETARIO</label>
                         </div>
                         <div class="cuidado" *ngIf="editTodoterrenoForm.get('matricula')?.hasError('required') && editTodoterrenoForm.get('matricula')?.touched">
                             <span><strong style="color: #FCBE11;">MATRICULA</strong> es un campo <strong style="color: red;">OBLIGATORIO</strong></span>
@@ -60,8 +60,8 @@
                         </div>
                         <div class="mb-3 form-floating">
                             <input type="text" formControlName="tVehiculo"
-                             class="form-control" id="floatingInputInvalid">
-                             <label for="floatingInputInvalid">VALOR VEHICULO</label>
+                             class="form-control" id="floatingInputInvalid" readonly>
+                             <label for="floatingInputInvalid">TIPO VEHICULO</label>
                         </div>
 
                         <div class="cuidado" *ngIf="editTodoterrenoForm.get('traccion')?.hasError('required') && editTodoterrenoForm.get('traccion')?.touched">

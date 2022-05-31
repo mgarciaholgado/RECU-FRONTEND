@@ -7,7 +7,7 @@ import { tMecanico, tPintor } from '../models/empleados';
   providedIn: 'root',
 })
 export class EmpleadosService {
-  url = 'http://localhost:3000';
+  url = 'https://recu-backend.herokuapp.com';
   constructor(private http: HttpClient) {}
 
   getEmpleados(): Observable<any> {
