@@ -12,3 +12,6 @@ TallerDils consiste en un taller de reparaciones que atiende a clientes y guarda
 ## TEGNOLOGIAS USADAS 🚀
 
 MONGO DB - ANGULAR - NODEJS - EXPRESS
+
+
+![mongodb](https://user-images.githubusercontent.com/91050890/171391209-aefc42b0-b6e9-460c-982e-6ddd5b51db6f.png)
