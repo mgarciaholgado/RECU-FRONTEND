@@ -20,7 +20,6 @@
                 <th scope="row">{{ reparaciones._codReparacion }}</th>
                 <td>{{ reparaciones._matricula }}</td>
                 <td>{{ reparaciones._nombreReparacion }}</td>
-
                 <td>{{ reparaciones._CosteBase  | currency: "EUR" }}</td>
                 <td>
                   <i [routerLink]="['/editar-reparacion',reparaciones._codReparacion]" class="fas fa-pen-to-square"></i>
