@@ -37,7 +37,7 @@ export class GraficoEmpleadosComponent implements OnInit {
     },
     series: [
       {
-        name: 'Empleados',
+        name: 'Salario Año',
         data: [],
         color: '#68A7AD',
       },
@@ -64,7 +64,7 @@ export class GraficoEmpleadosComponent implements OnInit {
       this.chartOptions.title["text"] = "Salario Año Empleados"
       this.chartOptions.series[0]["data"] = dataSeries
       this.chartOptions.xAxis["categories"] = dataCategorias
-      this.chartOptions.series["name"] = "Empleados"
+      this.chartOptions.series["name"] = "Salario Año"
 
 
       Highcharts.chart("empleados",this.chartOptions)

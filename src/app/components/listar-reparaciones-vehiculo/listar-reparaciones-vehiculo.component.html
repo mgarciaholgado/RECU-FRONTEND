@@ -20,7 +20,7 @@
                             <th scope="row">{{reparacion._codReparacion}}</th>
                             <td scope="row">{{reparacion._matricula}}</td>
                             <th style="font-weight: normal;">{{reparacion._nombreReparacion}}</th>
-                            <td scope="col">{{reparacion._CosteBase}}</td>
+                            <td scope="col">{{reparacion._CosteBase | currency: "EUR" }}</td>
                             
                           </tr>
                         </tbody>
