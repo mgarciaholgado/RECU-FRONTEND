@@ -12,3 +12,6 @@ TallerDils consiste en un taller de reparaciones que atiende a clientes y guarda
 ## TEGNOLOGIAS USADAS 🚀
 
 MONGO DB - EXPRESS - ANGULAR - NODEJS
+
+## ESTRUCTURA 💡
+En la carpeta **src/app** se encuentra la parte fundamental del proyecto seguido de esto en la carpeta **services** nos encontramos la comunicación entre FRONTEND Y BACKEND y en la carpeta **components** se encuentra cada parte que forma un componente.
