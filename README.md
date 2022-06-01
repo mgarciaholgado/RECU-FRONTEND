@@ -1,11 +1,14 @@
+# FRONTEND TALLER DILS!
+Autor: Miguel García Holgado
+Asignatura: GBD
+Fecha de entrega: 03/06/2022
 
-# Proyecto Frontend
-### Realizado por Miguel García
+## EXPLICACION DEL PROYECTO 📋
 
-Este proyecto esta realizado para un taller de mecanica en el que hay Vehiculos y Reparaciones.
+TallerDils consiste en un taller de reparaciones que atiende a clientes y guarda un registro de las reparaciones que se han hecho a cada vehículo, sus empleados y la estadística disponible para consultar datos de interés.
 
-He utilizado las tecnologías de:
-- Mongo
-- Angular
-- Express
-- Node JS
+
+
+## TEGNOLOGIAS USADAS 🚀
+![image](https://user-images.githubusercontent.com/91050890/171390187-715acc64-d42b-4c05-b988-a27fa02c36dd.png)
+
