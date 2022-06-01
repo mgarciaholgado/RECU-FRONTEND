@@ -1,7 +1,7 @@
 # FRONTEND TALLER DILS!
-Autor: Miguel García Holgado
-Asignatura: GBD
-Fecha de entrega: 03/06/2022
+## Autor: Miguel García Holgado
+## Asignatura: GBD
+## Fecha de entrega: 03/06/2022
 
 ## EXPLICACION DEL PROYECTO 📋
 
