@@ -12,7 +12,7 @@ TallerDils consiste en un taller de reparaciones que atiende a clientes y guarda
 ## TEGNOLOGIAS USADAS 🚀
 
 
-<img width="75" src="https://user-images.githubusercontent.com/91050890/171391371-d13ae6ab-a7b1-4731-9381-65a77e69a51e.png"><img width="65" src="https://user-images.githubusercontent.com/91050890/171391406-38107011-44b2-4736-b20b-625674680067.png"><img width="65" src="https://user-images.githubusercontent.com/91050890/171391467-d6121fa6-6802-4fe1-8496-a1968f4bd5f6.png">
+<img width="75" src="https://user-images.githubusercontent.com/91050890/171391371-d13ae6ab-a7b1-4731-9381-65a77e69a51e.png"><img width="65" src="https://user-images.githubusercontent.com/91050890/171391406-38107011-44b2-4736-b20b-625674680067.png">  <img width="65" src="https://user-images.githubusercontent.com/91050890/171391467-d6121fa6-6802-4fe1-8496-a1968f4bd5f6.png">
 
 
 
