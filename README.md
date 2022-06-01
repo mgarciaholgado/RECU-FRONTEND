@@ -10,5 +10,5 @@ TallerDils consiste en un taller de reparaciones que atiende a clientes y guarda
 
 
 ## TEGNOLOGIAS USADAS 🚀
-https://img.icons8.com/color/480/mongodb.png
 
+![image](https://user-images.githubusercontent.com/91050890/171390566-177bec0d-63e1-4583-b604-6c749c21da5f.png)
