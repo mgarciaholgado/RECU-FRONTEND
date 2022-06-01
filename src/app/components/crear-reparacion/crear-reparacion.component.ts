@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { tEmpleado } from 'src/app/models/empleados';
 import { Reparaciones, tReparaciones } from 'src/app/models/reparacion';
+import { tVehiculo } from 'src/app/models/vehiculo';
+import { EmpleadosService } from 'src/app/services/empleados.service';
 import { ReparacionService } from 'src/app/services/reparacion.service';
 import { VehiculoService } from 'src/app/services/vehiculos.service';
 
@@ -12,7 +15,8 @@ import { VehiculoService } from 'src/app/services/vehiculos.service';
   styleUrls: ['./crear-reparacion.component.css'],
 })
 export class CrearReparacionComponent implements OnInit {
- matriculas!: any[];
+  matriculas!: any[];
+  
   reparacionForm: FormGroup;
   titulo = 'Crear Reparacion';
   codigo: string | null;
@@ -25,21 +29,27 @@ export class CrearReparacionComponent implements OnInit {
     private toastr: ToastrService
   ) 
   {
-   this.vehiculoService.getVehiculos().subscribe((matriculas)=>{
+
+    this.vehiculoService.getVehiculos().subscribe((matriculas)=>{
       this.matriculas = matriculas;
-    })
+    });
+  
     this.reparacionForm = this.fb.group({
       codigo: ['', Validators.required],
       matricula: ['', Validators.required],
       nombre: ['', Validators.required],
       coste: ['', Validators.required],
     });
+
     this.codigo = this.aRouter.snapshot.paramMap.get('codigo');
   }
 
   ngOnInit(): void {
     this.editReparacion();
   }
+
+ 
+
   crearReparacion() {
     const REPARACION: tReparaciones = {
       codigo: this.reparacionForm.get('codigo')?.value,

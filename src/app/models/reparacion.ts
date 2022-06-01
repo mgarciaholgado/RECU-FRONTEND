@@ -4,11 +4,11 @@ export class Reparaciones {
     public _nombreReparacion: string;
     public _CosteBase: number;
 
-    constructor(codigo:number, matricula:string,nombre: string, coste: number){
-        this._codReparacion = codigo;
+    constructor(codReparacion:number,matricula:string,  nombreReparacion:string,costeBase:number) {
+        this._codReparacion = codReparacion;
         this._matricula = matricula;
-        this._nombreReparacion = nombre;
-        this._CosteBase = coste;
+        this._nombreReparacion = nombreReparacion;
+        this._CosteBase = costeBase;
     }
 
 }
