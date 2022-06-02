@@ -1,1 +1,0 @@
-{"version":3,"file":"cliente.js","sourceRoot":"","sources":["../../../../src/app/models/cliente.ts"],"names":[],"mappings":"AAAA,MAAM,OAAO,QAAQ;IAKjB,YAAY,GAAU,EAAE,MAAa,EAAE,QAAe;QAClD,IAAI,CAAC,IAAI,GAAG,GAAG;YACf,IAAI,CAAC,OAAO,GAAG,MAAM;YACrB,IAAI,CAAC,SAAS,GAAG,QAAQ,CAAA;IAC7B,CAAC;CAEJ"}
