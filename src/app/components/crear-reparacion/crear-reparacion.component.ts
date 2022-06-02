@@ -62,14 +62,14 @@ export class CrearReparacionComponent implements OnInit {
       this._reparacionesService
         .editarReparacion(this.codigo, REPARACION)
         .subscribe((data) => {
-          this.router.navigate(['/ver-reparaciones']);
+          this.router.navigate(['/dashboard/ver-reparaciones']);
         });
     } else {
       this._reparacionesService
         .crearReparaciones(REPARACION)
         .subscribe((data) => {
           this.toastr.success('Reparacion creada con exito !!');
-          this.router.navigate(['/ver-reparaciones']);
+          this.router.navigate(['/dashboard/ver-reparaciones']);
         });
     }
   }

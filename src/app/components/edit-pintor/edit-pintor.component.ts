@@ -53,7 +53,7 @@ export class EditPintorComponent implements OnInit {
         .editarPintor(this.dni, PINTOR)
         .subscribe((data) => {
           this.toastr.success('Pintor editado con exito !!');
-          this.router.navigate(['/ver-empleados']);
+          this.router.navigate(['/dashboard/ver-empleados']);
         });
     }
   }

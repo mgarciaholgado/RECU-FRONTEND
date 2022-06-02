@@ -46,14 +46,14 @@ export class CrearClienteComponent implements OnInit {
         .editarCliente(this.dni, CLIENTE)
         .subscribe((data) => {
           this.toastr.success('Cliente editado con exito !!');
-          this.router.navigate(['/ver-clientes']);
+          this.router.navigate(['/dashboard/ver-clientes']);
         });
     } else {
       this.clienteService
         .crearCliente(CLIENTE)
         .subscribe((data) => {
           this.toastr.success('Cliente creado con exito !!');
-          this.router.navigate(['/ver-clientes']);
+          this.router.navigate(['/dashboard/ver-clientes']);
         });
     }
 }

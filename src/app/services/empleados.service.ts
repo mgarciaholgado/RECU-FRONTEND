@@ -7,7 +7,7 @@ import { tMecanico, tPintor } from '../models/empleados';
   providedIn: 'root',
 })
 export class EmpleadosService {
-  url = 'https://recu-backend.herokuapp.com';
+  url = 'http://localhost:3000';
   constructor(private http: HttpClient) {}
 
   getEmpleados(): Observable<any> {
@@ -30,8 +30,8 @@ export class EmpleadosService {
     return this.http.get(this.url + '/verEmpleado/' + dni);
   }
 
-  crearMecanico(mecanico: tMecanico): Observable<any> {
-    return this.http.post(this.url + '/addEmpleado', mecanico);
+  crearMecanico(MECANICO: tMecanico): Observable<any> {
+    return this.http.post(this.url + '/addEmpleado', MECANICO);
   }
 
   crearPintor(PINTOR: tPintor): Observable<any> {

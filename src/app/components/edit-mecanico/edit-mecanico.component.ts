@@ -53,7 +53,7 @@ export class EditMecanicoComponent implements OnInit {
         .editarMecanico(this.dni, MECANICO)
         .subscribe((data) => {
           this.toastr.success('Mecanico editado con exito !!');
-          this.router.navigate(['/ver-empleados']);
+          this.router.navigate(['/dashboard/ver-empleados']);
         });
     }
   }

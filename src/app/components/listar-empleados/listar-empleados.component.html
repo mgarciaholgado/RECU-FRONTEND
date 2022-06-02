@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+
 <div class="container mt-5">
   <div class="row">
     <div class="col-lg-10 offset-lg-1">
@@ -29,8 +29,8 @@
                 <td>{{ empleados._empresaContratista}}</td>
         
                 <td>
-                  <i *ngIf="empleados._tipoEmpleado == 'mecanico'" [routerLink]="['/editar-mecanico', empleados._dni]" class="fas fa-pen-to-square"></i>
-                  <i *ngIf="empleados._tipoEmpleado == 'pintor'" [routerLink]="['/editar-pintor', empleados._dni]" class="fas fa-pen-to-square"></i>
+                  <i *ngIf="empleados._tipoEmpleado == 'mecanico'" [routerLink]="['/dashboard/editar-mecanico', empleados._dni]" class="fas fa-pen-to-square"></i>
+                  <i *ngIf="empleados._tipoEmpleado == 'pintor'" [routerLink]="['/dashboard/editar-pintor', empleados._dni]" class="fas fa-pen-to-square"></i>
                   <i (click)="eliminarEmpleado(empleados._dni)" class="fas fa-trash-can text-danger"></i>
                   
                 </td>
@@ -39,7 +39,7 @@
           </table>
           <div class="mt-3">
             <div class="trans">
-              <button routerLink="/crear-empleado" class="btn btn-warning">
+              <button routerLink="/dashboard/crear-empleado" class="btn btn-warning">
                NUEVO EMPLEADO
              </button>
            </div>

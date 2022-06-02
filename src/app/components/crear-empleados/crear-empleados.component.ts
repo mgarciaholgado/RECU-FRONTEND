@@ -36,10 +36,12 @@ export class CrearEmpleadosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
   crearEmpleado() {
-    if (this.empleadoForm.value.tVehiculo == 'mecanico') {
+    if (this.empleadoForm.value.tipoEmpleado == 'mecanico'){
+      
       const MECANICO: tMecanico = {
         dni: this.empleadoForm.get('dni')?.value,
         nombre: this.empleadoForm.get('nombre')?.value,
@@ -51,25 +53,25 @@ export class CrearEmpleadosComponent implements OnInit {
       this.empleadoService.crearMecanico(MECANICO).subscribe((data) => {
         console.log(data)
         this.toastr.success('Mecanico creado con exito !!');
-        this.router.navigate(['/ver-empleados']);
-      });
-    }else{
+        this.router.navigate(['/dashboard/ver-empleados']);
+    });
+  } else if (this.empleadoForm.value.tipoEmpleado == 'pintor'){
       
-      const PINTOR: tPintor = {
-        dni: this.empleadoForm.get('dni')?.value,
-        nombre: this.empleadoForm.get('nombre')?.value,
-        tipoEmpleado: this.empleadoForm.get('tipoEmpleado')?.value,
-        fechaContratacion: this.empleadoForm.get('fechaContratacion')?.value,
-        sueldoMes: this.empleadoForm.get('sueldoMes')?.value,
-        empresaContratista: this.empleadoForm.get('empresaContratista')?.value,
-      };
+    const PINTOR: tPintor = {
+      dni: this.empleadoForm.get('dni')?.value,
+      nombre: this.empleadoForm.get('nombre')?.value,
+      tipoEmpleado: this.empleadoForm.get('tipoEmpleado')?.value,
+      fechaContratacion: this.empleadoForm.get('fechaContratacion')?.value,
+      sueldoMes: this.empleadoForm.get('sueldoMes')?.value,
+      empresaContratista: this.empleadoForm.get('empresaContratista')?.value,
+    };
 
-      this.empleadoService.crearPintor(PINTOR).subscribe((data) => {
-        this.toastr.success('Pintor creado con exito !!');
-        this.router.navigate(['/ver-empleados']);
-      });
-    }
-    
+    this.empleadoService.crearPintor(PINTOR).subscribe((data) => {
+      this.toastr.success('Pintor creado con exito !!');
+      this.router.navigate(['/dashboard/ver-empleados']);
+    });
   }
+  
+}
 
 }

@@ -62,7 +62,7 @@ export class CrearVehiculosComponent implements OnInit {
     };
     this._vehiculosService.crearTodoterreno(TODOTERRENO).subscribe((data) => {
       this.toastr.success('Vehiculo creado con exito!!');
-      this.router.navigate(['/ver-vehiculos']);
+      this.router.navigate(['/dashboard/ver-vehiculos']);
     });
   } else if (this.vehiculoForm.value.tVehiculo == 'Deportivo'){
     const DEPORTIVO: tDeportivo = {
@@ -77,7 +77,7 @@ export class CrearVehiculosComponent implements OnInit {
     };
     this._vehiculosService.crearDeportivo(DEPORTIVO).subscribe((data) => {
       this.toastr.success('Vehiculo creado con exito!!');
-      this.router.navigate(['/ver-vehiculos']);
+      this.router.navigate(['/dashboard/ver-vehiculos']);
     });
   }
     

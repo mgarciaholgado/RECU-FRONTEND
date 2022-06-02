@@ -55,7 +55,7 @@ export class EditDeportivoComponent implements OnInit {
         .editarDeportivo(this.matricula, DEPORTIVO)
         .subscribe((data) => {
           this.toastr.success('Deportivo editado con exito !!');
-          this.router.navigate(['/ver-vehiculos']);
+          this.router.navigate(['/dashboard/ver-vehiculos']);
         });
     }
   }

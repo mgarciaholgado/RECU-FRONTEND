@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+
 <div class="container mt-5">
   <div class="row">
     <div class="col-lg-6 offset-lg-3">
@@ -22,7 +22,7 @@
                 <td>{{ reparaciones._nombreReparacion }}</td>
                 <td>{{ reparaciones._CosteBase  | currency: "EUR" }}</td>
                 <td>
-                  <i [routerLink]="['/editar-reparacion',reparaciones._codReparacion]" class="fas fa-pen-to-square"></i>
+                  <i [routerLink]="['/dashboard/editar-reparacion',reparaciones._codReparacion]" class="fas fa-pen-to-square"></i>
                   <i (click)="eliminarReparaciones(reparaciones._codReparacion)" class="fas fa-trash-can text-danger"></i>
                 </td>
               </tr>
@@ -30,7 +30,7 @@
           </table>
           <div class="mt-3">
             <div class="trans">
-              <button routerLink="/crear-reparacion" class="btn btn-warning">
+              <button routerLink="/dashboard/crear-reparacion" class="btn btn-warning">
                NUEVA REPARACION
              </button>
            </div>

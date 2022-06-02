@@ -55,7 +55,7 @@ export class EditTodoterrenoComponent implements OnInit {
         .editarTodoterreno(this.matricula, TODOTERRENO)
         .subscribe((data) => {
           this.toastr.success('TodoTerreno editado con exito !!');
-          this.router.navigate(['/ver-vehiculos']);
+          this.router.navigate(['/dashboard/ver-vehiculos']);
         });
     }
   }

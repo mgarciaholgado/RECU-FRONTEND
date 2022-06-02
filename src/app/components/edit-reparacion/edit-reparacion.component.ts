@@ -48,14 +48,14 @@ export class EditReparacionComponent implements OnInit {
         .editarReparacion(this.codigo, REPARACION)
         .subscribe((data) => {
           this.toastr.success('Reparacion editada con exito !!');
-          this.router.navigate(['/ver-reparaciones']);
+          this.router.navigate(['/dashboard/ver-reparaciones']);
         });
     } else {
       this._reparacionesService
         .crearReparaciones(REPARACION)
         .subscribe((data) => {
           this.toastr.success('Reparacion creada con exito !!');
-          this.router.navigate(['/ver-reparaciones']);
+          this.router.navigate(['/dashboard/ver-reparaciones']);
         });
     }
   }

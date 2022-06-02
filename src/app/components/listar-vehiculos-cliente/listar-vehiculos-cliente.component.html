@@ -1,4 +1,3 @@
-<app-navbar></app-navbar>
 <div class="container mt-5">
     <div class="row">
         <div class="col-lg-9 offset-lg-1">
@@ -26,13 +25,13 @@
                             <th style="font-weight: normal;">{{vehiculo._precio | currency: "EUR"}}</th>
                             <td style="font-weight: normal;">{{vehiculo._tipoVehiculo}}</td>
                             <td>
-                              <i [routerLink]="['/ver-reparaciones-vehiculo', vehiculo._matricula]" class=" fas fa-duotone fa-wrench"></i>
+                              <i [routerLink]="['/dashboard/ver-reparaciones-vehiculo', vehiculo._matricula]" class=" fas fa-duotone fa-wrench"></i>
                             </td>
                           </tr>
                         </tbody>
                       </table>
                       <div class="trans">
-                         <button routerLink="/ver-clientes" class="btn btn-warning">
+                         <button routerLink="/dashboard/ver-clientes" class="btn btn-warning">
                           VOLVER A CLIENTES
                         </button>
                       </div>
